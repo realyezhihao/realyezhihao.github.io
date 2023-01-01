@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>小白用GitHub和Hexo建立个人网站 | Mineblog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+ 
+  
+    <link rel="icon" href="/../img/favicon.svg">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle"></a>
+        
+          <a class="main-nav-link" href="/">首页</a>
+        
+          <a class="main-nav-link" href="/archives">归档</a>
+        
+          <a class="main-nav-link" href="/about">关于</a>
+        
+          <a class="main-nav-link" href="/board">留言</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://realyezhihao.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-小白用GitHub和Hexo建立个人网站" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="name">
+      小白用GitHub和Hexo建立个人网站
+    </h1>
+  
+
+        <div class="article-meta">
+          <a href="/2023/01/01/%E5%B0%8F%E7%99%BD%E7%94%A8GitHub%E5%92%8CHexo%E5%BB%BA%E7%AB%8B%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/" class="article-date">
+  <time datetime="2023-01-01T13:18:05.000Z" itemprop="datePublished">2023-01-01</time>
+</a>
+          
+          
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git%E4%BD%BF%E7%94%A8/" rel="tag">Git使用</a></li></ul>
+
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>请结合Hexo官网文档阅读本文章。<br />
+Hexo中文官网：<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/"
+class="uri">https://hexo.io/zh-cn/</a>。</p>
+<h1 id="浅谈gitgithub和hexo">浅谈Git，GitHub和Hexo</h1>
+<p>这个网站建立的主要原理是使用GitHub的服务器来存放网站，而网站框架由Hexo来实现。</p>
+<p>先简单说说Git，它是用来做程序版本管理的一个小工具，在程序开发中必不可少。用Git的人多了以后，出现了一个叫GitHub的线上社区，大家可在里面分享自己的由Git管理的代码。</p>
+<p>JavaScript脚本语言，常用于网页开发。Node.js是JavaScript的一种运行环境，而Hexo是基于Node.js的程序软件，该程序致力于个人博客网站的搭建。</p>
+<h1 id="关于github的准备">关于GitHub的准备</h1>
+<p>进入GitHub官网，按照提示注册一个账号。GitHub官网地址：<a
+target="_blank" rel="noopener" href="https://github.com/"
+class="uri">https://github.com/</a>。由于它是国外网站，经常会有连接不稳定情况，请多次尝试，你也可以查一下解决链接不稳的办法（本人亲测了改host文件的办法，要经常刷新，而且不是百试百灵）。</p>
+<p>然后在自己账号下创建一个新的仓库（repository），并建立对应的README.md文件。仓库名字要起为“&lt;<em>Github用户名</em>&gt;.github.io”，便于之后Hexo识别。比如我的用户名是“realyezhihzo”，那么仓库名要为“realyezhihao.github.io”。</p>
+<img src="/2023/01/01/%E5%B0%8F%E7%99%BD%E7%94%A8GitHub%E5%92%8CHexo%E5%BB%BA%E7%AB%8B%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/one.png" class="" title="one">
+<h1 id="关于git的准备">关于Git的准备</h1>
+<h2 id="下载">下载</h2>
+<p>在官网下载Git。Git官网网址：<a target="_blank" rel="noopener" href="https://git-scm.com/"
+class="uri">https://git-scm.com/</a>。</p>
+<h2 id="安装">安装</h2>
+<p>下载完成后，打开安装包。大多数地方按照默认设置一直点“Next”即可，但在“Adjusting
+the name of the initial branch in new
+repositories”一页中，建议选择“Override the default branch name for new
+repositories”，并把名称改为“main”。</p>
+<h2 id="初始化">初始化</h2>
+<p>前面说到程序员可以把Git管理的代码上传到Github上，也可从上面下载代码到本地（类似网盘），所以需要在两者之间建立好联系。这就是初始化的工作。</p>
+<p>在桌面右键的菜单中点击“Git bash here”，打开Git命令行，输入指令如下：
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global user.name &lt;your_name&gt; <span class="comment">#现在这里填GitHub用户名。若含有空格整个用户名要用引号包起来。</span></span><br><span class="line">$ git config --global user.email &lt;your_email&gt; <span class="comment">#现在这里填Github注册所用邮箱地址。</span></span><br></pre></td></tr></table></figure> 要检查刚才的设置，可以用以下的命令： <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global --list <span class="comment">#查看用户层面的配置</span></span><br></pre></td></tr></table></figure>
+学过大学计算机基础的话就不难推测，每次Git的本地仓库和GitHub的远程仓库的互动交流，都肯定要经过验证。这里使用的是SSH（Secure
+Shell）网络安全协议。我们需要创建一对自己的公私钥： <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -f &lt;output_keyfile&gt; -t rsa -C &lt;comment&gt; <span class="comment">#前面填给密钥起的名字，后面填Github注册所用邮箱地址。</span></span><br></pre></td></tr></table></figure>
+执行后Git会询问是否要设置密码短语（passphrase），直接两次回车默认不设置。之后会在C盘当前用户的文件夹里的.ssh文件夹里生成一对公私钥。拓展名是“pub”的是公钥，用记事本打开它，将其中内容复制。再打开GitHub的SSH
+keys的<a
+target="_blank" rel="noopener" href="https://github.com/settings/keys">设置页面</a>，新建一个key（title随意），把刚才复制的粘贴进去，最后确认一下。</p>
+<p>要检测Git和GitHub之间是否真的建立好了联系（这样的检测以后经常会有），就在Git命令行执行：
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh git@github.com</span><br></pre></td></tr></table></figure> 如果显示“Permission
+denied”，很有可能是私钥没有被识别到。这样的话就将Git命令行程序cd跳到存有私钥的文件夹（默认是.ssh），执行以下命令：
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-agent bash</span><br><span class="line">$ ssh-add &lt;private_key&gt; <span class="comment">#这里填创建的密钥的文件名</span></span><br></pre></td></tr></table></figure> 然后用之前的方法检测一下应该就成功了。
+要查看正在使用的密钥，可用以下命令： <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-add -l</span><br></pre></td></tr></table></figure></p>
+<h1 id="下载并使用hexo">下载并使用Hexo</h1>
+<h2 id="下载安装node.js">下载安装Node.js</h2>
+<p>官网下载地址：<a target="_blank" rel="noopener" href="https://nodejs.org/en/download/"
+class="uri">https://nodejs.org/en/download/</a>。<br />
+尽量安装最新版安装后可在Windows命令提示符或Git命令行中用“node
+-v”指令查看其版本号以确认安装成功。</p>
+<h2 id="下载安装hexo">下载安装Hexo</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+<p>同样的，可用“hexo -v”指令查看是否安装成功。</p>
+<h1 id="建立网站">建立网站</h1>
+<p>在喜欢的地方创建一个文件夹来存放整个网站的资源。比如我在D盘根目录下建立了文件夹MyBlog。<br />
+进入该文件夹，再打开Git命令行。执行以下指令： <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init <span class="comment">#这条指令告诉Hexo当前文件夹就是选定的网站资源文件夹。</span></span><br><span class="line">$ hexo new post <span class="string">&quot;&lt;file_name&gt;&quot;</span> <span class="comment">#新建一篇博客文章，标题由&lt;file_name&gt;指定。</span></span><br><span class="line">$ hexo generate</span><br><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+不出意外的话，以上命令执行后就可以进入本地服务器（localhost）看到博客网站了：<a
+target="_blank" rel="noopener" href="http://localhost:4000/"
+class="uri">http://localhost:4000/</a>。</p>
+<img src="/2023/01/01/%E5%B0%8F%E7%99%BD%E7%94%A8GitHub%E5%92%8CHexo%E5%BB%BA%E7%AB%8B%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/two.png" class="" title="two">
+<h1 id="部署网站">部署网站</h1>
+<p>部署网站就是把上面本地创建好的网站上传到服务器去。<br />
+不管用哪种方法都要确保Git和GitHub之间连接畅通。</p>
+<p>这里我使用的是最简单的一键部署法。<br />
+先下载hexo-deployer-git插件（plugin）： <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+然后进入网站文件夹，对_config.yml文件（这个文件很重要，很多设置都是针对它开展）进行修改，将其末尾改为：
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  repo: &lt;repository url&gt; <span class="comment">#填之前在GitHub上创建的仓库的网址。末尾加上“git”。</span></span><br><span class="line">                         <span class="comment">#我的例子：https://github.com/realyezhihao/realyezhihao.github.io.git </span></span><br><span class="line">  branch: [branch] <span class="comment">#填在GitHub上创建的仓库的默认分支的命名。一般为main。</span></span><br></pre></td></tr></table></figure> 最后，执行“hexo clean”&amp;&amp;“hexo
+deploy”即可。（有可能会有弹窗要求输入账号密码。）现在可以前往username.github.io查看网站了。</p>
+<p>这最后一步经常会出现错误。以本人经验，如果用本地服务器也无法访问，那应该是做的网站本身有错导致静态页面编译生成时出现了错误，这时就应该回去检查网站设置、页面文件、页面主题等等是否有语法逻辑的错误。如果本地服务器访问正常但部署失败，大多是因为Git和GitHub之间连接不够畅通。可使用“ssh
+git@github.com”来检测。检测正常了但还是出错（我经常遇到，已经是不明所以了），只能推测是人品不好:-(，等待一会儿后再尝试。</p>
+
+      
+    </div>
+  </div>
+ 
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    <div class="widget-wrap">
+    <div class="widget-wrap-info">
+        <img src="/../img/avatar.jpg" class="widget-wrap-info-img">
+        <div class="widget-wrap-info-author">realyezhihao</div>
+        <div class="widget-wrap-info-signature">于理论之闲云栖居，于尘世之烟火沸腾。</div>
+    </div>
+    <div class="info-nav">
+        <ul class="info-nav-ul">
+        
+            <li class="info-nav-li">
+            <a class="info-nav-link" href="/">
+                <div class="info-nav-div">
+                    <span class="info-nav-icon">
+                        <i data-feather="home"></i>
+                    </span>
+                    <span class="info-nav-name">首页</span>
+                </div>
+            </a>
+           </li>
+          
+            <li class="info-nav-li">
+            <a class="info-nav-link" href="/archives">
+                <div class="info-nav-div">
+                    <span class="info-nav-icon">
+                        <i data-feather="archive"></i>
+                    </span>
+                    <span class="info-nav-name">归档</span>
+                </div>
+            </a>
+           </li>
+          
+            <li class="info-nav-li">
+            <a class="info-nav-link" href="/about">
+                <div class="info-nav-div">
+                    <span class="info-nav-icon">
+                        <i data-feather="alert-circle"></i>
+                    </span>
+                    <span class="info-nav-name">关于</span>
+                </div>
+            </a>
+           </li>
+          
+            <li class="info-nav-li">
+            <a class="info-nav-link" href="/board">
+                <div class="info-nav-div">
+                    <span class="info-nav-icon">
+                        <i data-feather="edit-3"></i>
+                    </span>
+                    <span class="info-nav-name">留言</span>
+                </div>
+            </a>
+           </li>
+          
+        </ul>
+    </div>
+</div>
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2023 realyezhihao<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> | Theme by  <a href="https://github.com/FuShaoLei/hexo-theme-hiya" target="_blank">Hiya</a>
+      
+        <br>
+        <span id="busuanzi_container_site_pv">总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+      <span id="busuanzi_container_site_uv">
+        访客数<span id="busuanzi_value_site_uv"></span>人次
+      </span>
+        
+      
+    </div>
+    
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/,home" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives,archive" class="mobile-nav-link">归档</a>
+  
+    <a href="/about,alert-circle" class="mobile-nav-link">关于</a>
+  
+    <a href="/board,edit-3" class="mobile-nav-link">留言</a>
+  
+</nav>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<script>
+    feather.replace()
+</script>
+
+<script src="/js/script.js"></script>
+
+
+  </div>
+</body>
+</html>
