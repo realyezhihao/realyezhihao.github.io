@@ -77,8 +77,8 @@ class="uri">https://hexo.io/zh-cn/</a>。</p>
 <h1 id="浅谈gitgithub和hexo">浅谈Git，GitHub和Hexo</h1>
 <p>这个网站建立的主要原理是使用GitHub的服务器来存放网站，而网站框架由Hexo来实现。</p>
 <p>先简单说说Git，它是用来做程序版本管理的一个小工具，在程序开发中必不可少。用Git的人多了以后，出现了一个叫GitHub的线上社区，大家可在里面分享自己的由Git管理的代码。</p>
-<p>JavaScript脚本语言，常用于网页开发。Node.js是JavaScript的一种运行环境，而Hexo是基于Node.js的程序软件，该程序致力于个人博客网站的搭建。</p>
-<h1 id="关于github的准备">关于GitHub的准备</h1>
+<p>JavaScript脚本语言，常用于网页开发。Node.js是JavaScript的一种运行环境，而Hexo是基于Node.js的程序软件，该程序致力于个人博客网站的搭建。
+<span id="more"></span> # 关于GitHub的准备</p>
 <p>进入GitHub官网，按照提示注册一个账号。GitHub官网地址：<a
 target="_blank" rel="noopener" href="https://github.com/"
 class="uri">https://github.com/</a>。由于它是国外网站，经常会有连接不稳定情况，请多次尝试，你也可以查一下解决链接不稳的办法（本人亲测了改host文件的办法，要经常刷新，而且不是百试百灵）。</p>
@@ -129,7 +129,7 @@ class="uri">http://localhost:4000/</a>。</p>
 <p>这里我使用的是最简单的一键部署法。<br />
 先下载hexo-deployer-git插件（plugin）： <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
 然后进入网站文件夹，对_config.yml文件（这个文件很重要，很多设置都是针对它开展）进行修改，将其末尾改为：
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  repo: &lt;repository url&gt; <span class="comment">#填之前在GitHub上创建的仓库的网址。末尾加上“git”。</span></span><br><span class="line">                         <span class="comment">#我的例子：https://github.com/realyezhihao/realyezhihao.github.io.git </span></span><br><span class="line">  branch: [branch] <span class="comment">#填在GitHub上创建的仓库的默认分支的命名。一般为main。</span></span><br></pre></td></tr></table></figure> 最后，执行“hexo clean”&amp;&amp;“hexo
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">&lt;repository</span> <span class="string">url&gt;</span> <span class="comment">#填之前在GitHub上创建的仓库的网址。末尾加上“git”。</span></span><br><span class="line">                         <span class="comment">#我的例子：https://github.com/realyezhihao/realyezhihao.github.io.git </span></span><br><span class="line">  <span class="attr">branch:</span> [<span class="string">branch</span>] <span class="comment">#填在GitHub上创建的仓库的默认分支的命名。一般为main。</span></span><br></pre></td></tr></table></figure> 最后，执行“hexo clean”&amp;&amp;“hexo
 deploy”即可。（有可能会有弹窗要求输入账号密码。）现在可以前往username.github.io查看网站了。</p>
 <p>这最后一步经常会出现错误。以本人经验，如果用本地服务器也无法访问，那应该是做的网站本身有错导致静态页面编译生成时出现了错误，这时就应该回去检查网站设置、页面文件、页面主题等等是否有语法逻辑的错误。如果本地服务器访问正常但部署失败，大多是因为Git和GitHub之间连接不够畅通。可使用“ssh
 git@github.com”来检测。检测正常了但还是出错（我经常遇到，已经是不明所以了），只能推测是人品不好:-(，等待一会儿后再尝试。</p>
