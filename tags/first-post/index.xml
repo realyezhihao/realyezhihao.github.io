@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>first post on 断网博客</title>
+        <link>https://realyezhihao.github.io/tags/first-post/</link>
+        <description>Recent content in first post on 断网博客</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>Zhihao Ye</copyright>
+        <lastBuildDate>Sun, 26 Nov 2023 23:51:46 +0800</lastBuildDate><atom:link href="https://realyezhihao.github.io/tags/first-post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Hello World</title>
+        <link>https://realyezhihao.github.io/posts/hello-world/</link>
+        <pubDate>Sun, 26 Nov 2023 23:51:46 +0800</pubDate>
+        
+        <guid>https://realyezhihao.github.io/posts/hello-world/</guid>
+        <description>&lt;img src="https://realyezhihao.github.io/posts/hello-world/cover.jpg" alt="Featured image of post Hello World" /&gt;&lt;p&gt;本网站由Github pages后端托管，最初建立于2022年12月30日。刚建立时是将Hexo作为静态网站生成器，主题用的是Hiya。现在看来，当时很多东西做得比较粗糙。不久后我也遇到了可以称作是“心态爆炸”的事情，导致有很长一段时间没有对网站进行管理。&lt;/p&gt;
+&lt;p&gt;最近看到有高中老同学新开了微信公众号，于是也心血来潮，花了二十几个小时另外研究了一下，改成了Hugo生成器和Stack主题。毕竟不是专业的，同一年前一样又走了好多弯路（全英文文档看得好难受），不过终于是弄出来了。SEO方面，这个小破站必然是不如微博知乎微信那些的，不过我就是享受这种漂流瓶的感觉。其实我在今年元旦第一次建立本站时，在微信里发过网址，但是后来心态爆炸又把那条朋友圈删掉了。最后现在再在自己力所能及范围内推一下，网址也不变（没钱买域名），以后能捡到这个“漂流瓶”的都是有缘人。&lt;/p&gt;
+&lt;p&gt;出于对一年前的自己的纪念，现把初次建站时的本站概述附在下面。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;高中的时候就考虑过建立个人网站，但迫于个人知识狭隘和学业繁忙一直没实操。&lt;br&gt;
+最近形政课开展一个调研课题，没地方发放我的调查问卷，于是建了一个网站来推广。&lt;br&gt;
+以上是本站诞生的“导火索”了。&lt;/p&gt;
+&lt;p&gt;作为计算机二级都没过的小白，开发这个网站可谓“溯洄从之，道阻且长”。&lt;br&gt;
+本人没系统读过计算机，也不懂什么前端后端，就是偶尔折腾着玩儿。&lt;br&gt;
+这两天我看了网上各种鱼龙混杂的信息，走了很多弯路。最后的网站是基于GitHub和Hexo实现。&lt;br&gt;
+之所以把网站部署在GitHub上，最主要是因为它免费。&lt;br&gt;
+另外，我很看好GitHub。它作为目前全球最大的&lt;del&gt;同性交友平台&lt;/del&gt;代码开源平台，无数程序设计者的智慧在其中凝结。&lt;br&gt;
+“开源”对任何求知者都有着致命的诱惑。你的身旁将有无数志同道合者，你们将屹立于巨人的肩膀上。&lt;br&gt;
+在任何年代，只要存在知识分享，“开源”就永不过时。&lt;br&gt;
+我建立本站时主要的考量是稳定，GitHub的开源性就是它可持续的保障。&lt;/p&gt;
+&lt;p&gt;比起外部环境变化，我更担心“内部敌人”的瓦解。&lt;br&gt;
+如果哪天本人心态爆炸，永不更新，那这个小站岂不会遗失在互联网的烟海里？&lt;br&gt;
+哎无所谓了，人本就是“寄蜉蝣于天地，渺沧海之一粟”。&lt;br&gt;
+能来这里的都是有缘人，毕竟我既不是技术大牛，又没做过什么推广。&lt;br&gt;
+诸位能光临本寒舍，不胜感激。&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

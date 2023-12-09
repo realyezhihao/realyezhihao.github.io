@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Tags on Offline Blog</title>
+        <link>https://realyezhihao.github.io/en/tags/</link>
+        <description>Recent content in Tags on Offline Blog</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en</language>
+        <copyright>Zhihao Ye</copyright>
+        <lastBuildDate>Sun, 26 Nov 2023 23:51:46 +0800</lastBuildDate><atom:link href="https://realyezhihao.github.io/en/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>first post</title>
+        <link>https://realyezhihao.github.io/en/tags/first-post/</link>
+        <pubDate>Sun, 26 Nov 2023 23:51:46 +0800</pubDate>
+        
+        <guid>https://realyezhihao.github.io/en/tags/first-post/</guid>
+        <description></description>
+        </item>
+        
+    </channel>
+</rss>

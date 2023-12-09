@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>LaTeX on 断网博客</title>
+        <link>https://realyezhihao.github.io/tags/latex/</link>
+        <description>Recent content in LaTeX on 断网博客</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>Zhihao Ye</copyright>
+        <lastBuildDate>Fri, 08 Dec 2023 17:24:30 +0800</lastBuildDate><atom:link href="https://realyezhihao.github.io/tags/latex/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>适于建模国赛的LaTeX模板</title>
+        <link>https://realyezhihao.github.io/posts/%E9%80%82%E4%BA%8E%E5%BB%BA%E6%A8%A1%E5%9B%BD%E8%B5%9B%E7%9A%84latex%E6%A8%A1%E6%9D%BF/</link>
+        <pubDate>Fri, 08 Dec 2023 17:24:30 +0800</pubDate>
+        
+        <guid>https://realyezhihao.github.io/posts/%E9%80%82%E4%BA%8E%E5%BB%BA%E6%A8%A1%E5%9B%BD%E8%B5%9B%E7%9A%84latex%E6%A8%A1%E6%9D%BF/</guid>
+        <description>&lt;img src="https://realyezhihao.github.io/posts/%E9%80%82%E4%BA%8E%E5%BB%BA%E6%A8%A1%E5%9B%BD%E8%B5%9B%E7%9A%84latex%E6%A8%A1%E6%9D%BF/fengmian.png" alt="Featured image of post 适于建模国赛的LaTeX模板" /&gt;&lt;p&gt;本项目的主页地址：&lt;a class=&#34;link&#34; href=&#34;https://github.com/realyezhihao/my_cumcmthesis&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://github.com/realyezhihao/my_cumcmthesis&lt;/a&gt;（暂时没传到CTAN。）&lt;/p&gt;
+&lt;p&gt;这是我尝试着做的第一个LaTeX模板，准确来说是一个&lt;code&gt;.cls&lt;/code&gt;文件。&lt;/p&gt;
+&lt;p&gt;说来不怕你笑话，今年参加这比赛前我信誓旦旦地跟室友说要是拿了国奖就去表白。结果居然省奖都没有……所以计划也就告吹了&lt;del&gt;而不是因为怂还是什么的&lt;/del&gt;。作为建模手的我自然是要把锅甩给编程手和论文手的——就是因为没有用LaTeX导致卷面混乱。“工欲善其事必先利其器”，做一个模板来帮助他人甚至未来的自己，也许是有好处的。&lt;/p&gt;
+&lt;p&gt;目前是做了一个使用手册和一个简单的样例文档，今年寒假看能不能用这个模板来复刻一篇优秀论文。如果成功了，就把它正式发布到CTAN哈哈哈。&lt;/p&gt;
+&lt;p&gt;以上。&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='定义太多了,稍微梳理一下逻辑'>
+<title>“黎曼可积性问题”</title>
+
+<link rel='canonical' href='https://realyezhihao.github.io/posts/%E9%BB%8E%E6%9B%BC%E5%8F%AF%E7%A7%AF%E6%80%A7%E9%97%AE%E9%A2%98/'>
+
+<link rel="stylesheet" href="/scss/style.min.24ef1cc321916467896e8c70c10c0ad7b98c2a8df14298032fb637216e397f50.css"><meta property='og:title' content='“黎曼可积性问题”'>
+<meta property='og:description' content='定义太多了,稍微梳理一下逻辑'>
+<meta property='og:url' content='https://realyezhihao.github.io/posts/%E9%BB%8E%E6%9B%BC%E5%8F%AF%E7%A7%AF%E6%80%A7%E9%97%AE%E9%A2%98/'>
+<meta property='og:site_name' content='断网博客'>
+<meta property='og:type' content='article'><meta property='article:section' content='Posts' /><meta property='article:tag' content='淑芬二' /><meta property='article:published_time' content='2023-03-31T00:00:00&#43;08:00'/><meta property='article:modified_time' content='2023-03-31T00:00:00&#43;08:00'/><meta property='og:image' content='https://realyezhihao.github.io/posts/%E9%BB%8E%E6%9B%BC%E5%8F%AF%E7%A7%AF%E6%80%A7%E9%97%AE%E9%A2%98/cover.png' />
+<meta name="twitter:title" content="“黎曼可积性问题”">
+<meta name="twitter:description" content="定义太多了,稍微梳理一下逻辑"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://realyezhihao.github.io/posts/%E9%BB%8E%E6%9B%BC%E5%8F%AF%E7%A7%AF%E6%80%A7%E9%97%AE%E9%A2%98/cover.png' />
+    <link rel="shortcut icon" href="/ZhihaoYeWebIcon.svg" />
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu5df0dbd76082b6ae36cdb66097ff3a27_78212_300x0_resize_q75_box.jpg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">断网博客</a></h1>
+            <h2 class="site-description">好好学习，天天向上。</h2>
+        </div>
+    </header><ol class="social-menu">
+            
+                <li>
+                    <a 
+                        href='https://space.bilibili.com/522934978/'
+                        target="_blank"
+                        title="BiliBili"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-bilibili" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M3 10a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v6a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4v-6z" />
+  <path d="M8 3l2 3" />
+  <path d="M16 3l-2 3" />
+  <path d="M9 13v-2" />
+  <path d="M15 11v2" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://github.com/realyezhihao/realyezhihao.github.io/'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://steamcommunity.com/profiles/76561199236101898/'
+                        target="_blank"
+                        title="Steam"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-steam" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M16.5 5a4.5 4.5 0 1 1 -.653 8.953l-4.347 3.009l0 .038a3 3 0 0 1 -2.824 3l-.176 0a3 3 0 0 1 -2.94 -2.402l-2.56 -1.098v-3.5l3.51 1.755a2.989 2.989 0 0 1 2.834 -.635l2.727 -3.818a4.5 4.5 0 0 1 4.429 -5.302z" />
+  <circle cx="16.5" cy="9.5" r="1" fill="currentColor" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/about-me/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/usefullinks/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>友链</span>
+            </a>
+        </li>
+        
+
+        <div class="menu-bottom-section">
+                <li id="i18n-switch">  
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                    <select name="language" onchange="window.location.href = this.selectedOptions[0].value">
+                        
+                            <option value="https://realyezhihao.github.io/" selected>中文</option>
+                        
+                            <option value="https://realyezhihao.github.io/en/" >English</option>
+                        
+                    </select>
+                </li>
+            
+            
+            
+                <li id="dark-mode-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <span>暗色模式</span>
+                </li>
+            
+        </div>
+    </ol>
+</aside>
+
+    
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/posts/%E9%BB%8E%E6%9B%BC%E5%8F%AF%E7%A7%AF%E6%80%A7%E9%97%AE%E9%A2%98/">
+                <img src="/posts/%E9%BB%8E%E6%9B%BC%E5%8F%AF%E7%A7%AF%E6%80%A7%E9%97%AE%E9%A2%98/cover_hu45e7fa71885665dee3b3d0ee245b1cea_912303_800x0_resize_box_3.png"
+                        srcset="/posts/%E9%BB%8E%E6%9B%BC%E5%8F%AF%E7%A7%AF%E6%80%A7%E9%97%AE%E9%A2%98/cover_hu45e7fa71885665dee3b3d0ee245b1cea_912303_800x0_resize_box_3.png 800w, /posts/%E9%BB%8E%E6%9B%BC%E5%8F%AF%E7%A7%AF%E6%80%A7%E9%97%AE%E9%A2%98/cover_hu45e7fa71885665dee3b3d0ee245b1cea_912303_1600x0_resize_box_3.png 1600w"
+                        width="800" 
+                        height="710" 
+                        loading="lazy"
+                        alt="Featured image of post “黎曼可积性问题”" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/maths-learning/" style="background-color: #F08784; color: #FFFFFF;">
+                数学学习
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/posts/%E9%BB%8E%E6%9B%BC%E5%8F%AF%E7%A7%AF%E6%80%A7%E9%97%AE%E9%A2%98/">“黎曼可积性问题”</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            定义太多了,稍微梳理一下逻辑
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">2023-03-31 00:00 &#43;08:00</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 3 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <p>要寻找可积函数类，必须从黎曼可积（以下简称可积）的定义出发。</p>
+<h1 id="可积的定义">可积的定义</h1>
+<p>$f(x)$在$[a,b]$上面有定义.<br>
+在$[a,b]$上取$n$个分点: $a = x_0 &lt; x_1 &lt; \dots &lt; x_n = b$, 将它们叫做$[a,b]$的一个分割, 记作$\Delta$.<br>
+设 $\delta_i = |x_i - x_{i-1}|$, 即第$i$个小区间的长度.<br>
+设 $\lambda(\Delta) = \max\limits_{1 \leq i \leq n} \delta_i$, 即整个分割$\Delta$中最长的那个区间的长度.<br>
+取 $\xi_i \in [x_{i-1},x_i]$, 作和式
+$$
+\begin{equation*}
+\sum_{i=1}^{n} f(\xi_i)\delta_i. \tag{$\star$}
+\end{equation*}
+$$
+和式$(\star)$就叫做函数$f(x)$的一个黎曼和. 这个黎曼和很特殊, 因为它的值与$\xi_i$在$[x_{i-1},x_i]$上的选取、分割$\Delta$的选取都有关系.</p>
+<p>如果$\xi_i$在$[x_{i-1},x_i]$上的选取是任意的, 那么和式$(\star)$就叫做<strong>函数$f(x)$的关于$\Delta$的黎曼和</strong>.（$\xi_i$的选取与这个黎曼和的值无关.）</p>
+<p>如果$\xi_i$在$[x_{i-1},x_i]$上的选取是任意的, 而且分割$\Delta$的选取也是任意的, 并且狭义极限
+$$
+\lim_{\lambda(\Delta) \to 0} \sum_{i=1}^{n} f(\xi_i)\delta_i = I
+$$
+也存在, 那么和式$(\star)$的极限$I$就叫做<strong>函数$f(x)$在$[a,b]$上的定积分</strong>, 记作
+$$
+I = \int_a^b f(x) \mathrm{d}x,
+$$
+这时我们称$f(x)$在$[a,b]$上是<strong>黎曼可积的</strong>.</p>
+<p>注意黎曼和指的是和式$(\star)$本身, 而不是它可能存在的极限$I$.</p>
+<h1 id="可积的一个充分条件">可积的一个充分条件</h1>
+<p>$f(x) \in C[a,b] \Rightarrow f(x) \in R[a,b].$</p>
+<h1 id="可积的一个必要条件">可积的一个必要条件</h1>
+<p>一个初步的结论是: $f(x)$在$[a,b]$上无界, 则$f(x)$在$[a,b]$上黎曼不可积.可以想到, 无界意味着在$[a,b]$曲边梯形的面积无法计算.</p>
+<p>这个结论的逆否命题是:
+$$
+f(x) \in R[a,b] \Rightarrow f(x) = O(1) (x \in [a,b]).
+$$
+函数在指定区间上有界即函数在该区间上可积的必要条件.</p>
+<h1 id="可积的充要条件">可积的充要条件</h1>
+<p>要完全判断出一个函数的可积性, 我们需要回到之前的定义. 可以发现, 函数$f(x)$在$[a,b]$上可积, 等价于和式$(\star)$在下面“两个任意”的前提下有狭义极限存在: $\xi_i$在$[x_{i-1},x_i]$上的选取是任意的; 分割$\Delta$的选取是任意的.</p>
+<p>达布（Darboux）解决这个问题的思想类似于序列和函数中上下极限的思想.</p>
+<p>对任意的函数$f(x)$, 讨论其在给定区间$[a,b]$上的可积充要条件.</p>
+<ol>
+<li>
+<p>任意选定一个$\Delta$，这个特殊的黎曼和就有了相应的上确界（所有的$\xi_i$都取那个小区间的最大值, 即满足 $f(\xi_i) = \max \limits_{x\in[x_{i-1},x_i]} f(x)$的那个$\xi_i$）, 也有了相应的下确界（所有的$\xi_i$都取那个小区间的最小值, 即满足 $f(\xi_i) = \min \limits_{x\in[x_{i-1},x_i]} f(x)$的那个$\xi_i$）.</p>
+<p>将这个上确界定义为达布大和: $\overline{S}(\Delta) = \sum\limits_{i=1}^{n} M_i \delta_i$,<br>
+将这个下确界定义为达布小和: $\underline{S}(\Delta) = \sum\limits_{i=1}^{n} m_i \delta_i$.</p>
+</li>
+<li>
+<p>将这个$\Delta$细分, 即在原有基础上插入更多分点, 有$\Delta_1$, 再细分有$\Delta_2$……得到一列的分割${\Delta_n}$. 显然有 $\lim\limits_{n\to \infty} \lambda(\Delta_n) = 0$.</p>
+</li>
+<li>
+<p>按第一步那样找到每一个分割的上确界和下确界, 于是又有了一列的上确界${\overline{S}(\Delta_n)}$和一列的下确界${\underline{S}(\Delta_n)}$.</p>
+</li>
+<li>
+<p>可以证明这列上确界单调递减、下确界单调递增（细分的达布大和不增, 细分的达布小和不减）.于是就像以前的上下极限那样, 我们也把这里的单减列的下确界定义为<strong>上积分</strong>, 把单增列的上确界定义为<strong>下积分</strong>.</p>
+<p>上积分: $\overline{\int_a^b} f(x) \mathrm{d}x = \inf_n{\overline{S}(\Delta_n)}$, 下积分: $\underline{\int_a^b} f(x) \mathrm{d}x = \sup_n{\underline{S}(\Delta_n)}$.</p>
+</li>
+<li>
+<p>如果f(x)有界, 那么有以下的可积充要条件:
+$$
+\overline{\int_a^b} f(x) \mathrm{d}x = \underline{\int_a^b} f(x) \mathrm{d}x \triangleq I \Longleftrightarrow f(x) \in R[a,b], \int_a^b f(x) \mathrm{d}x = I.
+$$</p>
+</li>
+</ol>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/%E6%B7%91%E8%8A%AC%E4%BA%8C/">淑芬二</a>
+        
+    </section>
+
+
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/katex.min.css"integrity="sha256-J&#43;iAE0sgH8QSz9hpcDxXIftnj65JEZgNhGcgReTTK9s="crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/katex.min.js"integrity="sha256-InsNdER1b2xUewP&#43;pKCUJpkhiqwHgqiPXDlIk7GzBu4="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/contrib/auto-render.min.js"integrity="sha256-y39Mpg7V3D4lhBX4x6O0bUqTV4pSrfgwEfGKfxkOdgI="crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        renderMathInElement(document.querySelector(`.article-content`), {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ],
+            ignoredClasses: ["gist"]
+        });})
+</script>
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/posts/%E9%80%82%E4%BA%8E%E5%BB%BA%E6%A8%A1%E5%9B%BD%E8%B5%9B%E7%9A%84latex%E6%A8%A1%E6%9D%BF/">
+        
+        
+            <div class="article-image">
+                <img src="/posts/%E9%80%82%E4%BA%8E%E5%BB%BA%E6%A8%A1%E5%9B%BD%E8%B5%9B%E7%9A%84latex%E6%A8%A1%E6%9D%BF/fengmian.ef24801d5faee670732753bf8b9ad721_hud515c04074b8b489b5732035c94ba41d_1649905_250x150_fill_box_smart1_3.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 适于建模国赛的LaTeX模板"
+                        
+                        data-hash="md5-7ySAHV&#43;u5nBzJ1O/i5rXIQ==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">适于建模国赛的LaTeX模板</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/posts/%E5%AF%B9%E4%BA%8E%E6%95%B0%E5%AD%A6%E7%9A%84%E6%9D%82%E6%84%9F/">
+        
+        
+            <div class="article-image">
+                <img src="/posts/%E5%AF%B9%E4%BA%8E%E6%95%B0%E5%AD%A6%E7%9A%84%E6%9D%82%E6%84%9F/cover.9c2ed7a3fb86f5916de2df41761d24de_hu1cdf04a1dc074112719af5dd50581fd8_1609833_250x150_fill_box_smart1_3.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 对于数学的一点点看法"
+                        
+                        data-hash="md5-nC7Xo/uG9ZFt4t9Bdh0k3g==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">对于数学的一点点看法</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/posts/%E5%B8%B8%E6%95%B0%E5%8F%98%E5%BC%82%E6%B3%95%E4%B8%BA%E4%BB%80%E4%B9%88%E5%8F%AF%E8%A1%8C/">
+        
+        
+            <div class="article-image">
+                <img src="/posts/%E5%B8%B8%E6%95%B0%E5%8F%98%E5%BC%82%E6%B3%95%E4%B8%BA%E4%BB%80%E4%B9%88%E5%8F%AF%E8%A1%8C/cover.f415c02f6c47bb71524184e91027564c_hu9b8c26a88141ff15ea6911e753004254_71520_250x150_fill_box_smart1_3.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post “常数变异法”为什么可行"
+                        
+                        data-hash="md5-9BXAL2xHu3FSQYTpECdWTA==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">“常数变异法”为什么可行</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2023 Zhihao Ye
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.21.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Categories on Offline Blog</title>
+        <link>https://realyezhihao.github.io/en/categories/</link>
+        <description>Recent content in Categories on Offline Blog</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en</language>
+        <copyright>Zhihao Ye</copyright>
+        <lastBuildDate>Sun, 26 Nov 2023 23:51:46 +0800</lastBuildDate><atom:link href="https://realyezhihao.github.io/en/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Hello World</title>
+        <link>https://realyezhihao.github.io/en/categories/hello-world/</link>
+        <pubDate>Sun, 26 Nov 2023 23:51:46 +0800</pubDate>
+        
+        <guid>https://realyezhihao.github.io/en/categories/hello-world/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>maths learning</title>
+        <link>https://realyezhihao.github.io/en/categories/maths-learning/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>https://realyezhihao.github.io/en/categories/maths-learning/</guid>
+        <description>&lt;img src="https://realyezhihao.github.io/en/categories/maths-learning/%E8%91%AC%E9%80%81%E7%9A%84%E8%8A%99%E8%8E%89%E8%8E%B2.jpg" alt="Featured image of post maths learning" /&gt;</description>
+        </item>
+        <item>
+        <title>miscellany</title>
+        <link>https://realyezhihao.github.io/en/categories/miscellany/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>https://realyezhihao.github.io/en/categories/miscellany/</guid>
+        <description></description>
+        </item>
+        
+    </channel>
+</rss>

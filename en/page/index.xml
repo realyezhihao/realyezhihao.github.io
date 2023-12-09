@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Pages on Offline Blog</title>
+        <link>https://realyezhihao.github.io/en/page/</link>
+        <description>Recent content in Pages on Offline Blog</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en</language>
+        <copyright>Zhihao Ye</copyright>
+        <lastBuildDate>Fri, 30 Dec 2022 00:00:00 +0800</lastBuildDate><atom:link href="https://realyezhihao.github.io/en/page/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>About</title>
+        <link>https://realyezhihao.github.io/en/about-me/</link>
+        <pubDate>Fri, 30 Dec 2022 00:00:00 +0800</pubDate>
+        
+        <guid>https://realyezhihao.github.io/en/about-me/</guid>
+        <description>&lt;p&gt;My name is Zhihao. It&amp;rsquo;s hard to work out a satisfying name, so almost all my sreen names are linear combinations of {&lt;strong&gt;&amp;lsquo;real&amp;rsquo;&lt;/strong&gt;, &lt;strong&gt;&amp;lsquo;ye&amp;rsquo;&lt;/strong&gt;, &lt;strong&gt;&amp;lsquo;zhihao&amp;rsquo;&lt;/strong&gt;, &lt;strong&gt;&amp;lsquo;my&amp;rsquo;&lt;/strong&gt;, &lt;strong&gt;&amp;lsquo;user&amp;rsquo;&lt;/strong&gt;, &lt;code&gt;$platform_name&lt;/code&gt;}. I&amp;rsquo;m now an undergraduate majoring in maths in Guizhou University, China.&lt;/p&gt;
+&lt;p&gt;Email me at &lt;a class=&#34;link&#34; href=&#34;mailto:scyzhh@outlook.com&#34; &gt;scyzhh@outlook.com&lt;/a&gt; or &lt;a class=&#34;link&#34; href=&#34;mailto:mec.zhye21@gzu.edu.cn&#34; &gt;mec.zhye21@gzu.edu.cn&lt;/a&gt;.&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Archives</title>
+        <link>https://realyezhihao.github.io/en/archives/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>https://realyezhihao.github.io/en/archives/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Powered by</title>
+        <link>https://realyezhihao.github.io/en/usefullinks/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>https://realyezhihao.github.io/en/usefullinks/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Search</title>
+        <link>https://realyezhihao.github.io/en/search/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>https://realyezhihao.github.io/en/search/</guid>
+        <description></description>
+        </item>
+        
+    </channel>
+</rss>
