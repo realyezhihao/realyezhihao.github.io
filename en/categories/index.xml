@@ -13,7 +13,15 @@
         <pubDate>Sun, 26 Nov 2023 23:51:46 +0800</pubDate>
         
         <guid>https://realyezhihao.github.io/en/categories/hello-world/</guid>
-        <description></description>
+        <description>&lt;img src="https://realyezhihao.github.io/en/categories/hello-world/helloworld.jpg" alt="Featured image of post Hello World" /&gt;</description>
+        </item>
+        <item>
+        <title>light reading</title>
+        <link>https://realyezhihao.github.io/en/categories/light-reading/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>https://realyezhihao.github.io/en/categories/light-reading/</guid>
+        <description>&lt;img src="https://realyezhihao.github.io/en/categories/light-reading/pic.jpg" alt="Featured image of post light reading" /&gt;</description>
         </item>
         <item>
         <title>maths learning</title>
@@ -21,7 +29,7 @@
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
         <guid>https://realyezhihao.github.io/en/categories/maths-learning/</guid>
-        <description>&lt;img src="https://realyezhihao.github.io/en/categories/maths-learning/%E8%91%AC%E9%80%81%E7%9A%84%E8%8A%99%E8%8E%89%E8%8E%B2.jpg" alt="Featured image of post maths learning" /&gt;</description>
+        <description>&lt;img src="https://realyezhihao.github.io/en/categories/maths-learning/pic.jpg" alt="Featured image of post maths learning" /&gt;</description>
         </item>
         <item>
         <title>miscellany</title>
@@ -29,7 +37,7 @@
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
         <guid>https://realyezhihao.github.io/en/categories/miscellany/</guid>
-        <description></description>
+        <description>&lt;img src="https://realyezhihao.github.io/en/categories/miscellany/pic.jpg" alt="Featured image of post miscellany" /&gt;</description>
         </item>
         
     </channel>

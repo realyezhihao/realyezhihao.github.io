@@ -131,6 +131,18 @@
                 href="https://realyezhihao.github.io/en/archives/"
                 />
   </url><url>
+    <loc>https://realyezhihao.github.io/en/categories/light-reading/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://realyezhihao.github.io/categories/light-reading/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://realyezhihao.github.io/en/categories/light-reading/"
+                />
+  </url><url>
     <loc>https://realyezhihao.github.io/en/categories/maths-learning/</loc>
     <xhtml:link
                 rel="alternate"
