@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='my own understanding on the regular curve (surface is similar)'>
+<title>On Regularity in Differential Geomotry</title>
+
+<link rel='canonical' href='https://realyezhihao.github.io/en/posts/%E5%85%B3%E4%BA%8E%E5%BE%AE%E5%88%86%E5%87%A0%E4%BD%95%E4%B8%AD%E6%AD%A3%E5%88%99%E7%9A%84%E7%90%86%E8%A7%A3/'>
+
+<link rel="stylesheet" href="/scss/style.min.24ef1cc321916467896e8c70c10c0ad7b98c2a8df14298032fb637216e397f50.css"><meta property='og:title' content='On Regularity in Differential Geomotry'>
+<meta property='og:description' content='my own understanding on the regular curve (surface is similar)'>
+<meta property='og:url' content='https://realyezhihao.github.io/en/posts/%E5%85%B3%E4%BA%8E%E5%BE%AE%E5%88%86%E5%87%A0%E4%BD%95%E4%B8%AD%E6%AD%A3%E5%88%99%E7%9A%84%E7%90%86%E8%A7%A3/'>
+<meta property='og:site_name' content='Offline Blog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Posts' /><meta property='article:tag' content='Differential Geomotry' /><meta property='article:tag' content='Maths Analysis 3' /><meta property='article:published_time' content='2024-07-15T16:00:03&#43;08:00'/><meta property='article:modified_time' content='2024-07-15T16:00:03&#43;08:00'/><meta property='og:image' content='https://realyezhihao.github.io/en/posts/%E5%85%B3%E4%BA%8E%E5%BE%AE%E5%88%86%E5%87%A0%E4%BD%95%E4%B8%AD%E6%AD%A3%E5%88%99%E7%9A%84%E7%90%86%E8%A7%A3/cover.jpg' />
+<meta name="twitter:title" content="On Regularity in Differential Geomotry">
+<meta name="twitter:description" content="my own understanding on the regular curve (surface is similar)"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://realyezhihao.github.io/en/posts/%E5%85%B3%E4%BA%8E%E5%BE%AE%E5%88%86%E5%87%A0%E4%BD%95%E4%B8%AD%E6%AD%A3%E5%88%99%E7%9A%84%E7%90%86%E8%A7%A3/cover.jpg' />
+    <link rel="shortcut icon" href="/ZhihaoYeWebIcon.svg" />
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/en/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu5df0dbd76082b6ae36cdb66097ff3a27_78212_300x0_resize_q75_box.jpg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/en">Offline Blog</a></h1>
+            <h2 class="site-description">好好学习，天天向上。</h2>
+        </div>
+    </header><ol class="social-menu">
+            
+                <li>
+                    <a 
+                        href='https://space.bilibili.com/522934978/'
+                        target="_blank"
+                        title="BiliBili"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-bilibili" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M3 10a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v6a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4v-6z" />
+  <path d="M8 3l2 3" />
+  <path d="M16 3l-2 3" />
+  <path d="M9 13v-2" />
+  <path d="M15 11v2" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://github.com/realyezhihao/realyezhihao.github.io/'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://steamcommunity.com/profiles/76561199236101898/'
+                        target="_blank"
+                        title="Steam"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-steam" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M16.5 5a4.5 4.5 0 1 1 -.653 8.953l-4.347 3.009l0 .038a3 3 0 0 1 -2.824 3l-.176 0a3 3 0 0 1 -2.94 -2.402l-2.56 -1.098v-3.5l3.51 1.755a2.989 2.989 0 0 1 2.834 -.635l2.727 -3.818a4.5 4.5 0 0 1 4.429 -5.302z" />
+  <circle cx="16.5" cy="9.5" r="1" fill="currentColor" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/en/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/en/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/en/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/en/about-me/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/en/usefullinks/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>Links</span>
+            </a>
+        </li>
+        
+
+        <div class="menu-bottom-section">
+                <li id="i18n-switch">  
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                    <select name="language" onchange="window.location.href = this.selectedOptions[0].value">
+                        
+                            <option value="https://realyezhihao.github.io/" >中文</option>
+                        
+                            <option value="https://realyezhihao.github.io/en/" selected>English</option>
+                        
+                    </select>
+                </li>
+            
+            
+            
+                <li id="dark-mode-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <span>Dark Mode</span>
+                </li>
+            
+        </div>
+    </ol>
+</aside>
+
+    
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/en/posts/%E5%85%B3%E4%BA%8E%E5%BE%AE%E5%88%86%E5%87%A0%E4%BD%95%E4%B8%AD%E6%AD%A3%E5%88%99%E7%9A%84%E7%90%86%E8%A7%A3/">
+                <img src="/en/posts/%E5%85%B3%E4%BA%8E%E5%BE%AE%E5%88%86%E5%87%A0%E4%BD%95%E4%B8%AD%E6%AD%A3%E5%88%99%E7%9A%84%E7%90%86%E8%A7%A3/cover_hu9bff37766a6807fe343104819bee86f1_283989_800x0_resize_q75_box.jpg"
+                        srcset="/en/posts/%E5%85%B3%E4%BA%8E%E5%BE%AE%E5%88%86%E5%87%A0%E4%BD%95%E4%B8%AD%E6%AD%A3%E5%88%99%E7%9A%84%E7%90%86%E8%A7%A3/cover_hu9bff37766a6807fe343104819bee86f1_283989_800x0_resize_q75_box.jpg 800w, /en/posts/%E5%85%B3%E4%BA%8E%E5%BE%AE%E5%88%86%E5%87%A0%E4%BD%95%E4%B8%AD%E6%AD%A3%E5%88%99%E7%9A%84%E7%90%86%E8%A7%A3/cover_hu9bff37766a6807fe343104819bee86f1_283989_1600x0_resize_q75_box.jpg 1600w"
+                        width="800" 
+                        height="567" 
+                        loading="lazy"
+                        alt="Featured image of post On Regularity in Differential Geomotry" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/en/categories/maths-learning/" style="background-color: #F08784; color: #FFFFFF;">
+                maths learning
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/en/posts/%E5%85%B3%E4%BA%8E%E5%BE%AE%E5%88%86%E5%87%A0%E4%BD%95%E4%B8%AD%E6%AD%A3%E5%88%99%E7%9A%84%E7%90%86%E8%A7%A3/">On Regularity in Differential Geomotry</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            my own understanding on the regular curve (surface is similar)
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">2024-07-15 16:00 &#43;08:00</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    2 minute read
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+        <footer class="article-translations">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+            <div>
+                
+                    <a href="https://realyezhihao.github.io/posts/%E5%85%B3%E4%BA%8E%E5%BE%AE%E5%88%86%E5%87%A0%E4%BD%95%E4%B8%AD%E6%AD%A3%E5%88%99%E7%9A%84%E7%90%86%E8%A7%A3/" class="link">中文</a>
+                
+            </div>
+        </footer>
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <blockquote>
+    <p>女孩子的脸虽然都是同胚的，但是有的正则性好一点，所以这部分女孩子的脸就格外好看。</p><span class="cite"><span>― </span><span>网络</span><cite></cite></span></blockquote>
+<p>The end of this semester&rsquo;s FINAL EXAM has come, and at last I could try to make time to complete this blog. This will be my first time to write a maths blog in English. I&rsquo;ll translate it into Chinese later. Sounds odd&hellip; Why don&rsquo;t I write it in Chinese at very first, but force myself to use English pretending to be a native English speaker? Oh, it is said that maths majors are all somehow masochists. Most of them, anyway. You know, &ldquo;No pain no gain.&rdquo;</p>
+<p>I shall start with basic definitions.</p>
+<p><em><strong>Def(3-dimensional curve)</strong></em> A <em>parametrized curve</em> in 3-dimensional Euclidean space is a continuous map $\alpha: I \to \mathbb{R}^3$ of an open interval $I = (a,b)$ of the real line $\mathbb{R}$ into $\mathbb{R}^3$. As for $\alpha = (x(t),y(t),z(t))$, $t$ is the <em>parameter</em> of line $\alpha$. Image set${x(t),y(t),z(t)}$ is the <em>graph</em> of line $\alpha$.</p>
+<p>So, differential geometry, we want the methods of differential calculus can be applied.</p>
+<p><em><strong>Def(differential curve)</strong></em> A <em>parametrized differentiable curve</em> is a continuous differentiable map. As for $\alpha = (x(t),y(t),z(t))$, $x(t)$, $y(t)$, $z(t)$ are all $C^\infty$ functions.</p>
+<p>One obvious simple instance of non-differential curve is absolute value function.</p>
+<p>Those two properties above, continuity and differentiability, seem to be enough for a certain curve in Euclidean space to be analysed easily. However, all the textbooks taught me <strong>&ldquo;regularity&rdquo;</strong> were forgoten<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup><sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>. What exactly is &ldquo;regularity&rdquo; they mentioned here? I shall read the definition again.</p>
+<p><em><strong>Def(regular curve)</strong></em>  A parametrized differentiable curve $\alpha: \alpha(t) = (x(t), y(t), z(t))$ is <em>regular</em> if
+$$\forall t \in (a,b), |\alpha&rsquo;(t)| = \sqrt{[x&rsquo;(t)]^2 +[y&rsquo;(t)]^2 + [z&rsquo;(t)]^2}&gt; 0.$$</p>
+<p>We want to insure that the curve we consider has a tangent line at every point. <em>Frenet frame</em>, a powerful tool for analysis, consists of three vectors orthogonal to each other: unit tangent vector $\bm{t}$, unit normal vector $\bm{n}$, unit binormal vector $\bm{b}$. Both $\bm{n}$ and $\bm{b}$ come from $\bm{t}$ parallel to the tangent line. What if the derivative of $\alpha(t_0)$ was a zero vector? Unfortunately, such tangent line might not exist at $t_0$, and dear Frenet frame couldn&rsquo;t work. Frent frame is only a small example to show why WE NEED TANGENT LINEs EVERYWHERE.</p>
+<p><strong>e.g.</strong> Consider such a plane curve, $\alpha: \alpha(t) = (t^4, t^2, t^3)$. Of course it&rsquo;s differentiable. Notice that $\alpha&rsquo;(0) = (0,0,0)$, the velocity vector is zero for $t = 0$, so this curve is not regular. You can check its figure below. Pay attention to $(0,0,0)$, the curve isn&rsquo;t smooth there.</p>
+<p><img src="/en/posts/%E5%85%B3%E4%BA%8E%E5%BE%AE%E5%88%86%E5%87%A0%E4%BD%95%E4%B8%AD%E6%AD%A3%E5%88%99%E7%9A%84%E7%90%86%E8%A7%A3/%E4%B8%89%E7%BB%B4%E5%8F%82%E6%95%B0%E6%9B%B2%E7%BA%BF.svg"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Image"
+	
+	
+></p>
+<p>Someone (like me) prefer to play devil’s advocate: how can a non-zero derivative demonstrate the existence of the tangent line to the curve? The proof is as followed.</p>
+<p><em><strong>Proof</strong></em> Assume $\alpha: \alpha(t) = (x(t),y(t),z(t))$ is a differential curve. According to the definition of derivative of vector function, $\forall t_0 \in (a,b)$,
+$$
+\frac{\mathrm{d}\alpha}{\mathrm{d}t}\Big\vert_{t_0} = (\frac{\mathrm{d}x}{\mathrm{d}t},\frac{\mathrm{d}y}{\mathrm{d}t},\frac{\mathrm{d}z}{\mathrm{d}t})\Big\vert_{t_0} = \lim_{t \to t_0} \frac{\alpha(t) - \alpha(t_0)}{t-t_0}.
+$$
+According to differentiability,
+$$
+\lim_{t \to t_0-0} \frac{\alpha(t_0) - \alpha(t)}{t-t_0} = \lim_{t \to t_0+0} \frac{\alpha(t) - \alpha(t_0)}{t-t_0},
+$$
+i.e. $\alpha&rsquo;(t_0-0) = \alpha&rsquo;(t_0+0)$.
+The unit direction vector of the left tangent line is
+$$
+\bm{e}^-(t_0) = -\lim_{t\to t_0 - 0} \frac{\alpha(t) - \alpha(t_0)}{|\alpha(t) - \alpha(t_0)|};
+$$
+The unit direction vector of the right tangent line is
+$$
+\bm{e}^+(t_0) = +\lim_{t\to t_0 + 0} \frac{\alpha(t) - \alpha(t_0)}{|\alpha(t) - \alpha(t_0)|}.
+$$
+Obviously, iff. $\bm{e}^-(t_0) = \bm{e}^+(t_0) = \bm{e}$, the tangent line to $\alpha$ at $t_0$ exists, and its direction vector is just $\bm{e}$.<br>
+$\bm{e}^-(t_0) \parallel \alpha&rsquo;(t_0-0)$, $\bm{e}^+(t_0) \parallel \alpha&rsquo;(t_0+0)$. If $\alpha&rsquo;(t_0 - 0) = \alpha&rsquo;(t_0 + 0) = \alpha&rsquo;(t_0) \neq \bm{0}$, $\bm{e}^-(t_0)$ and $\bm{e}^+(t_0)$ would get to the same direction, hence they are equal.<br>
+<em><strong>Q.E.D.</strong></em></p>
+<p>This proof tells us $\alpha&rsquo;(t_0) \neq \bm{0} \Rightarrow $ tangent line exists. In contrast, can we say there&rsquo;s no tangent line if $\alpha&rsquo;(t_0) = \bm{0}$? Sorry, just take a look at $\alpha: \alpha(t) = (t^3, t^3)$.</p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>MANFREDO P. DO CARMO. Geometry of Curves and Surfaces: Revised and Updated Second Edition[M]. Dover Publications, 2016. ISBN: 978-0-486-80699-0.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p>彭家贵,陈卿. 微分几何[M]. 北京:高等教育出版社, 2021. ISBN: 978-7-04-056950-6.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/en/tags/differential-geomotry/">Differential Geomotry</a>
+        
+            <a href="/en/tags/maths-analysis-3/">Maths Analysis 3</a>
+        
+    </section>
+
+
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/katex.min.css"integrity="sha256-J&#43;iAE0sgH8QSz9hpcDxXIftnj65JEZgNhGcgReTTK9s="crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/katex.min.js"integrity="sha256-InsNdER1b2xUewP&#43;pKCUJpkhiqwHgqiPXDlIk7GzBu4="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/contrib/auto-render.min.js"integrity="sha256-y39Mpg7V3D4lhBX4x6O0bUqTV4pSrfgwEfGKfxkOdgI="crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        renderMathInElement(document.querySelector(`.article-content`), {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ],
+            ignoredClasses: ["gist"]
+        });})
+</script>
+    
+</article>
+
+    
+
+    
+
+     
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2023 - 
+        
+        2024 Zhihao Ye
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.21.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

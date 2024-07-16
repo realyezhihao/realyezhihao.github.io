@@ -6,6 +6,71 @@
         <description>Recent content in maths learning on Offline Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en</language>
-        <copyright>Zhihao Ye</copyright><atom:link href="https://realyezhihao.github.io/en/categories/maths-learning/index.xml" rel="self" type="application/rss+xml" />
+        <copyright>Zhihao Ye</copyright>
+        <lastBuildDate>Mon, 15 Jul 2024 16:00:03 +0800</lastBuildDate><atom:link href="https://realyezhihao.github.io/en/categories/maths-learning/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>On Regularity in Differential Geomotry</title>
+        <link>https://realyezhihao.github.io/en/posts/%E5%85%B3%E4%BA%8E%E5%BE%AE%E5%88%86%E5%87%A0%E4%BD%95%E4%B8%AD%E6%AD%A3%E5%88%99%E7%9A%84%E7%90%86%E8%A7%A3/</link>
+        <pubDate>Mon, 15 Jul 2024 16:00:03 +0800</pubDate>
+        
+        <guid>https://realyezhihao.github.io/en/posts/%E5%85%B3%E4%BA%8E%E5%BE%AE%E5%88%86%E5%87%A0%E4%BD%95%E4%B8%AD%E6%AD%A3%E5%88%99%E7%9A%84%E7%90%86%E8%A7%A3/</guid>
+        <description>&lt;img src="https://realyezhihao.github.io/en/posts/%E5%85%B3%E4%BA%8E%E5%BE%AE%E5%88%86%E5%87%A0%E4%BD%95%E4%B8%AD%E6%AD%A3%E5%88%99%E7%9A%84%E7%90%86%E8%A7%A3/cover.jpg" alt="Featured image of post On Regularity in Differential Geomotry" /&gt;&lt;blockquote&gt;
+    &lt;p&gt;女孩子的脸虽然都是同胚的，但是有的正则性好一点，所以这部分女孩子的脸就格外好看。&lt;/p&gt;&lt;span class=&#34;cite&#34;&gt;&lt;span&gt;― &lt;/span&gt;&lt;span&gt;网络&lt;/span&gt;&lt;cite&gt;&lt;/cite&gt;&lt;/span&gt;&lt;/blockquote&gt;
+&lt;p&gt;The end of this semester&amp;rsquo;s FINAL EXAM has come, and at last I could try to make time to complete this blog. This will be my first time to write a maths blog in English. I&amp;rsquo;ll translate it into Chinese later. Sounds odd&amp;hellip; Why don&amp;rsquo;t I write it in Chinese at very first, but force myself to use English pretending to be a native English speaker? Oh, it is said that maths majors are all somehow masochists. Most of them, anyway. You know, &amp;ldquo;No pain no gain.&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;I shall start with basic definitions.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;Def(3-dimensional curve)&lt;/strong&gt;&lt;/em&gt; A &lt;em&gt;parametrized curve&lt;/em&gt; in 3-dimensional Euclidean space is a continuous map $\alpha: I \to \mathbb{R}^3$ of an open interval $I = (a,b)$ of the real line $\mathbb{R}$ into $\mathbb{R}^3$. As for $\alpha = (x(t),y(t),z(t))$, $t$ is the &lt;em&gt;parameter&lt;/em&gt; of line $\alpha$. Image set${x(t),y(t),z(t)}$ is the &lt;em&gt;graph&lt;/em&gt; of line $\alpha$.&lt;/p&gt;
+&lt;p&gt;So, differential geometry, we want the methods of differential calculus can be applied.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;Def(differential curve)&lt;/strong&gt;&lt;/em&gt; A &lt;em&gt;parametrized differentiable curve&lt;/em&gt; is a continuous differentiable map. As for $\alpha = (x(t),y(t),z(t))$, $x(t)$, $y(t)$, $z(t)$ are all $C^\infty$ functions.&lt;/p&gt;
+&lt;p&gt;One obvious simple instance of non-differential curve is absolute value function.&lt;/p&gt;
+&lt;p&gt;Those two properties above, continuity and differentiability, seem to be enough for a certain curve in Euclidean space to be analysed easily. However, all the textbooks taught me &lt;strong&gt;&amp;ldquo;regularity&amp;rdquo;&lt;/strong&gt; were forgoten&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;. What exactly is &amp;ldquo;regularity&amp;rdquo; they mentioned here? I shall read the definition again.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;Def(regular curve)&lt;/strong&gt;&lt;/em&gt;  A parametrized differentiable curve $\alpha: \alpha(t) = (x(t), y(t), z(t))$ is &lt;em&gt;regular&lt;/em&gt; if
+$$\forall t \in (a,b), |\alpha&amp;rsquo;(t)| = \sqrt{[x&amp;rsquo;(t)]^2 +[y&amp;rsquo;(t)]^2 + [z&amp;rsquo;(t)]^2}&amp;gt; 0.$$&lt;/p&gt;
+&lt;p&gt;We want to insure that the curve we consider has a tangent line at every point. &lt;em&gt;Frenet frame&lt;/em&gt;, a powerful tool for analysis, consists of three vectors orthogonal to each other: unit tangent vector $\bm{t}$, unit normal vector $\bm{n}$, unit binormal vector $\bm{b}$. Both $\bm{n}$ and $\bm{b}$ come from $\bm{t}$ parallel to the tangent line. What if the derivative of $\alpha(t_0)$ was a zero vector? Unfortunately, such tangent line might not exist at $t_0$, and dear Frenet frame couldn&amp;rsquo;t work. Frent frame is only a small example to show why WE NEED TANGENT LINEs EVERYWHERE.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;e.g.&lt;/strong&gt; Consider such a plane curve, $\alpha: \alpha(t) = (t^4, t^2, t^3)$. Of course it&amp;rsquo;s differentiable. Notice that $\alpha&amp;rsquo;(0) = (0,0,0)$, the velocity vector is zero for $t = 0$, so this curve is not regular. You can check its figure below. Pay attention to $(0,0,0)$, the curve isn&amp;rsquo;t smooth there.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://realyezhihao.github.io/en/posts/%E5%85%B3%E4%BA%8E%E5%BE%AE%E5%88%86%E5%87%A0%E4%BD%95%E4%B8%AD%E6%AD%A3%E5%88%99%E7%9A%84%E7%90%86%E8%A7%A3/%E4%B8%89%E7%BB%B4%E5%8F%82%E6%95%B0%E6%9B%B2%E7%BA%BF.svg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Image&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;Someone (like me) prefer to play devil’s advocate: how can a non-zero derivative demonstrate the existence of the tangent line to the curve? The proof is as followed.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;Proof&lt;/strong&gt;&lt;/em&gt; Assume $\alpha: \alpha(t) = (x(t),y(t),z(t))$ is a differential curve. According to the definition of derivative of vector function, $\forall t_0 \in (a,b)$,
+$$
+\frac{\mathrm{d}\alpha}{\mathrm{d}t}\Big\vert_{t_0} = (\frac{\mathrm{d}x}{\mathrm{d}t},\frac{\mathrm{d}y}{\mathrm{d}t},\frac{\mathrm{d}z}{\mathrm{d}t})\Big\vert_{t_0} = \lim_{t \to t_0} \frac{\alpha(t) - \alpha(t_0)}{t-t_0}.
+$$
+According to differentiability,
+$$
+\lim_{t \to t_0-0} \frac{\alpha(t_0) - \alpha(t)}{t-t_0} = \lim_{t \to t_0+0} \frac{\alpha(t) - \alpha(t_0)}{t-t_0},
+$$
+i.e. $\alpha&amp;rsquo;(t_0-0) = \alpha&amp;rsquo;(t_0+0)$.
+The unit direction vector of the left tangent line is
+$$
+\bm{e}^-(t_0) = -\lim_{t\to t_0 - 0} \frac{\alpha(t) - \alpha(t_0)}{|\alpha(t) - \alpha(t_0)|};
+$$
+The unit direction vector of the right tangent line is
+$$
+\bm{e}^+(t_0) = +\lim_{t\to t_0 + 0} \frac{\alpha(t) - \alpha(t_0)}{|\alpha(t) - \alpha(t_0)|}.
+$$
+Obviously, iff. $\bm{e}^-(t_0) = \bm{e}^+(t_0) = \bm{e}$, the tangent line to $\alpha$ at $t_0$ exists, and its direction vector is just $\bm{e}$.&lt;br&gt;
+$\bm{e}^-(t_0) \parallel \alpha&amp;rsquo;(t_0-0)$, $\bm{e}^+(t_0) \parallel \alpha&amp;rsquo;(t_0+0)$. If $\alpha&amp;rsquo;(t_0 - 0) = \alpha&amp;rsquo;(t_0 + 0) = \alpha&amp;rsquo;(t_0) \neq \bm{0}$, $\bm{e}^-(t_0)$ and $\bm{e}^+(t_0)$ would get to the same direction, hence they are equal.&lt;br&gt;
+&lt;em&gt;&lt;strong&gt;Q.E.D.&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;This proof tells us $\alpha&amp;rsquo;(t_0) \neq \bm{0} \Rightarrow $ tangent line exists. In contrast, can we say there&amp;rsquo;s no tangent line if $\alpha&amp;rsquo;(t_0) = \bm{0}$? Sorry, just take a look at $\alpha: \alpha(t) = (t^3, t^3)$.&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;MANFREDO P. DO CARMO. Geometry of Curves and Surfaces: Revised and Updated Second Edition[M]. Dover Publications, 2016. ISBN: 978-0-486-80699-0.&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
+&lt;p&gt;彭家贵,陈卿. 微分几何[M]. 北京:高等教育出版社, 2021. ISBN: 978-7-04-056950-6.&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+        </item>
+        
     </channel>
 </rss>

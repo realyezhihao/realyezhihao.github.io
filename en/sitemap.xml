@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://realyezhihao.github.io/en/</loc>
-    <lastmod>2023-12-08T17:23:25+08:00</lastmod>
+    <lastmod>2024-07-15T16:00:03+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
@@ -16,7 +16,7 @@
                 />
   </url><url>
     <loc>https://realyezhihao.github.io/en/categories/</loc>
-    <lastmod>2023-12-08T17:23:25+08:00</lastmod>
+    <lastmod>2024-07-15T16:00:03+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
@@ -26,6 +26,64 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://realyezhihao.github.io/en/categories/"
+                />
+  </url><url>
+    <loc>https://realyezhihao.github.io/en/tags/differential-geomotry/</loc>
+    <lastmod>2024-07-15T16:00:03+08:00</lastmod>
+  </url><url>
+    <loc>https://realyezhihao.github.io/en/tags/maths-analysis-3/</loc>
+    <lastmod>2024-07-15T16:00:03+08:00</lastmod>
+  </url><url>
+    <loc>https://realyezhihao.github.io/en/categories/maths-learning/</loc>
+    <lastmod>2024-07-15T16:00:03+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://realyezhihao.github.io/categories/maths-learning/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://realyezhihao.github.io/en/categories/maths-learning/"
+                />
+  </url><url>
+    <loc>https://realyezhihao.github.io/en/posts/%E5%85%B3%E4%BA%8E%E5%BE%AE%E5%88%86%E5%87%A0%E4%BD%95%E4%B8%AD%E6%AD%A3%E5%88%99%E7%9A%84%E7%90%86%E8%A7%A3/</loc>
+    <lastmod>2024-07-15T16:00:03+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://realyezhihao.github.io/posts/%E5%85%B3%E4%BA%8E%E5%BE%AE%E5%88%86%E5%87%A0%E4%BD%95%E4%B8%AD%E6%AD%A3%E5%88%99%E7%9A%84%E7%90%86%E8%A7%A3/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://realyezhihao.github.io/en/posts/%E5%85%B3%E4%BA%8E%E5%BE%AE%E5%88%86%E5%87%A0%E4%BD%95%E4%B8%AD%E6%AD%A3%E5%88%99%E7%9A%84%E7%90%86%E8%A7%A3/"
+                />
+  </url><url>
+    <loc>https://realyezhihao.github.io/en/posts/</loc>
+    <lastmod>2024-07-15T16:00:03+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://realyezhihao.github.io/posts/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://realyezhihao.github.io/en/posts/"
+                />
+  </url><url>
+    <loc>https://realyezhihao.github.io/en/tags/</loc>
+    <lastmod>2024-07-15T16:00:03+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://realyezhihao.github.io/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://realyezhihao.github.io/en/tags/"
                 />
   </url><url>
     <loc>https://realyezhihao.github.io/en/tags/first-post/</loc>
@@ -65,32 +123,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://realyezhihao.github.io/en/posts/hello-world/"
-                />
-  </url><url>
-    <loc>https://realyezhihao.github.io/en/posts/</loc>
-    <lastmod>2023-12-08T17:23:25+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="https://realyezhihao.github.io/posts/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://realyezhihao.github.io/en/posts/"
-                />
-  </url><url>
-    <loc>https://realyezhihao.github.io/en/tags/</loc>
-    <lastmod>2023-12-08T17:23:25+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="https://realyezhihao.github.io/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://realyezhihao.github.io/en/tags/"
                 />
   </url><url>
     <loc>https://realyezhihao.github.io/en/about-me/</loc>
@@ -141,18 +173,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://realyezhihao.github.io/en/categories/light-reading/"
-                />
-  </url><url>
-    <loc>https://realyezhihao.github.io/en/categories/maths-learning/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="https://realyezhihao.github.io/categories/maths-learning/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://realyezhihao.github.io/en/categories/maths-learning/"
                 />
   </url><url>
     <loc>https://realyezhihao.github.io/en/categories/miscellany/</loc>

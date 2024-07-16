@@ -7,7 +7,15 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en</language>
         <copyright>Zhihao Ye</copyright>
-        <lastBuildDate>Sun, 26 Nov 2023 23:51:46 +0800</lastBuildDate><atom:link href="https://realyezhihao.github.io/en/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 15 Jul 2024 16:00:03 +0800</lastBuildDate><atom:link href="https://realyezhihao.github.io/en/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>maths learning</title>
+        <link>https://realyezhihao.github.io/en/categories/maths-learning/</link>
+        <pubDate>Mon, 15 Jul 2024 16:00:03 +0800</pubDate>
+        
+        <guid>https://realyezhihao.github.io/en/categories/maths-learning/</guid>
+        <description>&lt;img src="https://realyezhihao.github.io/en/categories/maths-learning/pic.jpg" alt="Featured image of post maths learning" /&gt;</description>
+        </item>
+        <item>
         <title>Hello World</title>
         <link>https://realyezhihao.github.io/en/categories/hello-world/</link>
         <pubDate>Sun, 26 Nov 2023 23:51:46 +0800</pubDate>
@@ -22,14 +30,6 @@
         
         <guid>https://realyezhihao.github.io/en/categories/light-reading/</guid>
         <description>&lt;img src="https://realyezhihao.github.io/en/categories/light-reading/pic.jpg" alt="Featured image of post light reading" /&gt;</description>
-        </item>
-        <item>
-        <title>maths learning</title>
-        <link>https://realyezhihao.github.io/en/categories/maths-learning/</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-        
-        <guid>https://realyezhihao.github.io/en/categories/maths-learning/</guid>
-        <description>&lt;img src="https://realyezhihao.github.io/en/categories/maths-learning/pic.jpg" alt="Featured image of post maths learning" /&gt;</description>
         </item>
         <item>
         <title>miscellany</title>
