@@ -38,6 +38,8 @@ h1, h2, h3, h4, h5, h6 {
     figure#avatar {
         margin: 0px 10px 0px 0px;
     }
+    main#list {padding: 0em 5em;}
+    article {padding: 0em 1em;}
 }
 @media screen and (max-width: 500px) {
     header, #headertext {
@@ -46,15 +48,15 @@ h1, h2, h3, h4, h5, h6 {
         align-items: center;
     }
     h1#sitetitle {margin: 0px;}
+    main#list {padding: 0em 0.5em;}
+    article {padding: 0em;}
 }
 
 /*main body*/
 main#list {
     max-width: var(--textwidth);
     margin: 3em auto;
-    padding: 0em 5em;
     :not(p) {line-height: 2;}
-
      a:link,  a:visited {
         color: var(--txtcolor);
         text-decoration: none;
@@ -69,7 +71,6 @@ main#list ul {
 article {
     max-width: var(--textwidth);
     margin: 3em auto;
-    padding: 0em 1em;
 }
 article a:link, article a:visited, footer a {
     color: var(--txtcolor);

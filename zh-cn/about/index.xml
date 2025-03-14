@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>你好, 世界! on 断网博客</title>
-    <link>/zh-cn/about/</link>
+    <link>//localhost:1313/zh-cn/about/</link>
     <description>Recent content in 你好, 世界! on 断网博客</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <lastBuildDate></lastBuildDate>
-    <atom:link href="/zh-cn/about/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//localhost:1313/zh-cn/about/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
