@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>“常数变异法”为什么可行 | 断网博客</title>
+  
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/font.css">
+
+  
+      <script src="/js/main.js"></script>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/image/webicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/image/webicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/image/webicon/favicon-16x16.png">
+    <link rel="manifest" href="/image/webicon/site.webmanifest">
+
+  
+    <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.css"
+  integrity="sha384-zh0CIslj+VczCZtlzBcjt5ppRcsAmDnRem7ESsYwWwg3m/OaJ2l4x7YBZl9Kxxib"
+  crossorigin="anonymous"
+>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.js"
+  integrity="sha384-Rma6DA2IPUwhNxmrB/7S3Tno0YY7sFu9WSYMCuulLhIqYSGZ2gKCJWIqhBWqMQfh"
+  crossorigin="anonymous">
+</script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/contrib/auto-render.min.js"
+  integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);">
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '\\[', right: '\\]', display: true},   
+        {left: '$$', right: '$$', display: true},     
+        {left: '\\(', right: '\\)', display: false},  
+        {left: '$', right: '$', display: false},      
+      ],
+      throwOnError : false
+    });
+  });
+</script>
+  
+</head>
+<body>
+  <header>
+      <figure id="avatar">
+        <a href="/"><img src="/image/avatar.jpg" alt="Sakura Chiyo"/></a>
+      </figure>
+    <div id="headertext">
+      <h1 id="sitetitle">断网博客</h1>
+      
+  <nav id="topnav">
+    <ul>
+    <li>
+      <a href="/zh-cn/">首页</a>
+    </li>
+    <li>
+      <a href="/zh-cn/about/">关于</a>
+    </li>
+    <li>
+      <a href="/zh-cn/tags/">标签页</a>
+    </li>
+    <li>
+      <a href="/en/">English</a>
+    </li>
+    </ul>
+  </nav>
+
+    </div>
+  </header>
+<article>
+  
+<nav id="tags">
+  <ul>
+      <li><a href="/zh-cn/tags/#Work">功课</a></li>
+  </ul>
+</nav>
+
+  <h1 id="articletitle">“常数变异法”为什么可行</h1>
+  
+  <time datetime="2023-03-22">2023-03-22</time>
+
+  
+  <p>本学期学习的常微分方程, 开始不久就是最基础的<strong>一阶线性微分方程</strong>, 即</p>
+$$
+    \frac{\mathrm{d}y}{\mathrm{d}x} = a(x)y + f(x). 
+$$<p>$f(x) \equiv 0$, 上式则为<strong>齐次线性微分方程</strong>;<!-- raw HTML omitted -->
+$f(x) \neq 0$, 上式则为<strong>非齐次线性微分方程</strong>.</p>
+<p>齐次线性微分方程求解非常简单, 只需一步分离变量再积分即可. 对于非齐次线性微分方程, 我所了解的国内教材都用了“常数变异法”, 看得让人一愣一愣的. 一些国内教材补充了第二种更好理解的“积分因子法”. 下面我主要分享一下自己对“常数变异法”的理解.</p>
+<p><!-- raw HTML omitted -->先把教材的“常数变异法”贴在这里<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>.<!-- raw HTML omitted --></p>
+<p>故齐次线性微分方程的通解为</p>
+$$
+    y = Ce^{\int a(x)\mathrm{d}x},
+$$<p>其中C为任意常数.<br>
+为了进一步求非齐次线性方程</p>
+$$
+\begin{equation}
+    \frac{\mathrm{d}y}{\mathrm{d}x} = a(x)y + f(x)
+\end{equation}
+$$<p>的通解, 我们的思想是把齐次线性方程的通解表达式中的常数$C$换成$x$的函数$c(x)$, 从而先求形如</p>
+$$
+\begin{equation}
+    y = c(x) e^{\int a(x) \mathrm{d}x}
+\end{equation}
+$$<p>的解, 其中$c(x)$看成待定函数. 注意到</p>
+$$
+    \frac{\mathrm{d}y}{\mathrm{d}x} = \frac{\mathrm{d}c}{\mathrm{d}x} \cdot e^{\int a(x) \mathrm{d}x} + c(x) \cdot a(x)e^{\int a(x) dx}.
+$$<p>将(2)代入方程(1)得</p>
+$$
+    \frac{\mathrm{d}c}{\mathrm{d}x} = f(x)e^{-\int a(x) \mathrm{d}x}
+$$<p>两端积分, 得</p>
+$$
+    c(x) = \int f(x) e^{-\int a(x) \mathrm{d}x} \mathrm{d}x + C,
+$$<p>其中$C$为任意常数. 把上式代入(2), 便得非齐次线性方程(1)的通解</p>
+$$
+    y = Ce^{\int a(x) \mathrm{d}x} + e^{\int a(x) \mathrm{d}x} \int f(x)e^{-\int a(x) \mathrm{d}x} \mathrm{d}x.
+$$<p>以上就是教材的讲法了.最让人难以理解的就是开头的“常数$C$换成$x$的函数$c(x)$”: 那些数学家怎么知道换掉常数就能得到通解呢？</p>
+<p>抱着试一试的态度, 把处理齐次方程的<strong>分离变量法</strong>拿去处理非齐次方程</p>
+$$
+    \frac{\mathrm{d}y}{\mathrm{d}x} = a(x)y + f(x).
+$$<p>因为 $f(x) \neq 0$, 所以 $y \neq 0$, 可以随便除, 于是原方程两边除以$y$得到</p>
+$$
+    \frac{\mathrm{d}y}{y} = [a(x) + \frac{f(x)}{y}] \mathrm{d}x,
+$$<p>然后两端积分, 要注意$y$是关于$x$的函数（我下面写成了 $y(x)$）, 可以得到</p>
+$$
+    \ln |y(x)| = \int a(x) \mathrm{d}x + \int \frac{f(x)}{y(x)} \mathrm{d}x + C_1,
+$$<p>从而解出$y(x)$如下</p>
+$$
+    y(x) = e^{\int a(x) \mathrm{d}x} \cdot C_2 e^{\int \frac{f(x)}{y(x)} \mathrm{d}x}.
+$$<p>我发现式子后半部分可以写成只关于$x$的函数 $c(x)$。这下终于有了大家喜闻乐见的$y = e^{\int a(x) \mathrm{d}x c(x)}$.</p>
+<p>必须承认“常数变异法”十分天才, 但我还是没能理解它背后的思想, 总感觉它是运气太好被偶然撞见的. 相比之下我觉得还是“积分因子法”更具有普适性.</p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>摘自我们专业配备的ODE教材：张伟年,杜正东,徐冰.常微分方程.北京:高等教育出版社,2014&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+
+</article>
+
+<footer>
+  <a href="#">回到顶部</a>
+  <span id="copyright">
+    &copy;
+    Zhihao Ye
+    
+      2019 - 
+    
+    2025
+  </span> 
+</footer>
+</body>
+</html>
