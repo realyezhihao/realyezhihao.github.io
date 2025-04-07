@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>页面1 on SakuraChiyo主题的样例网站</title>
+    <link>/hugo-SakuraChiyo/zh-cn/page1/</link>
+    <description>Recent content in 页面1 on SakuraChiyo主题的样例网站</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate></lastBuildDate>
+    <atom:link href="/hugo-SakuraChiyo/zh-cn/page1/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

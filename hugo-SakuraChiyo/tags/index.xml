@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>tags on Demo Site in Theme SakuraChiyo</title>
+    <link>/hugo-SakuraChiyo/tags/</link>
+    <description>Recent content in tags on Demo Site in Theme SakuraChiyo</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 03 Apr 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/hugo-SakuraChiyo/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>misc</title>
+      <link>/hugo-SakuraChiyo/tags/misc/</link>
+      <pubDate>Thu, 03 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>/hugo-SakuraChiyo/tags/misc/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>KaTeX</title>
+      <link>/hugo-SakuraChiyo/tags/katex/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>/hugo-SakuraChiyo/tags/katex/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Markdown</title>
+      <link>/hugo-SakuraChiyo/tags/markdown/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>/hugo-SakuraChiyo/tags/markdown/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

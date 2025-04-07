@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr">
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>On Regularity in Differential Geomotry | Zhihao Offline Site</title>
   
-    <link rel="stylesheet" href="/css/main.css">
-    <link rel="stylesheet" href="/css/font.css">
+      <link rel="stylesheet" href="/main.min.1abf4d0b20a5fe36bd650a1bfbaba94bd1ef31575320532dd382a59c225dcc59.css" integrity="sha256-Gr9NCyCl/ja9ZQob&#43;6upS9HvMVdTIFMt04KlnCJdzFk=" crossorigin="anonymous">
+      <link rel="stylesheet" href="/font.min.25a22a47a931e06821bdbb9907a45066f4cc6594c5f377e56881c8834ed4141d.css" integrity="sha256-JaIqR6kx4GghvbuZB6RQZvTMZZTF83flaIHIg07UFB0=" crossorigin="anonymous">
 
   
-      <script src="/js/main.js"></script>
+      <script src="/main.cf84904bf8cca4ebaa521fd9b5d7c2ab739ea5947977b3f238bfe55313ea9fe7.js" integrity="sha256-z4SQS/jMpOuqUh/ZtdfCq3OepZR5d7PyOL/lUxPqn&#43;c=" crossorigin="anonymous"></script>
 
     <link rel="apple-touch-icon" sizes="180x180" href="/image/webicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/image/webicon/favicon-32x32.png">
@@ -17,31 +17,17 @@
     <link rel="manifest" href="/image/webicon/site.webmanifest">
 
   
-    <link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.css"
-  integrity="sha384-zh0CIslj+VczCZtlzBcjt5ppRcsAmDnRem7ESsYwWwg3m/OaJ2l4x7YBZl9Kxxib"
-  crossorigin="anonymous"
->
-<script
-  defer
-  src="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.js"
-  integrity="sha384-Rma6DA2IPUwhNxmrB/7S3Tno0YY7sFu9WSYMCuulLhIqYSGZ2gKCJWIqhBWqMQfh"
-  crossorigin="anonymous">
-</script>
-<script
-  defer
-  src="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/contrib/auto-render.min.js"
-  integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
-  crossorigin="anonymous"
-  onload="renderMathInElement(document.body);">
-</script>
+    
+  <link rel="stylesheet" href="/katex/katex.min.css" integrity="" crossorigin="anonymous">
+  <script src="/katex/katex.min.js" integrity="" crossorigin="anonymous"></script>
+  <script src="/katex/auto-render.min.js" integrity="" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+
 <script>
   document.addEventListener("DOMContentLoaded", function() {
     renderMathInElement(document.body, {
       delimiters: [
         {left: '\\[', right: '\\]', display: true},   
-        {left: '$$', right: '$$', display: true},     
+        {left: '$$', right: '$$', display: true},   
         {left: '\\(', right: '\\)', display: false},  
         {left: '$', right: '$', display: false},      
       ],
@@ -54,7 +40,7 @@
 <body>
   <header>
       <figure id="avatar">
-        <a href="/"><img src="/image/avatar.jpg" alt="Sakura Chiyo"/></a>
+        <a href="/"><img src="/image/avatar.jpg" alt="avatar"/></a>
       </figure>
     <div id="headertext">
       <h1 id="sitetitle">Zhihao Offline Site</h1>
@@ -100,7 +86,7 @@
 <p><strong>Def(differential curve)</strong> A <em>parametrized differentiable curve</em> is a continuous differentiable map. As for $\alpha = (x(t),y(t),z(t))$, $x(t)$, $y(t)$, $z(t)$ are all $C^\infty$ functions.</p>
 <p>One obvious simple instance of non-differential curve is absolute value function.</p>
 <p>Those two properties above, continuity and differentiability, seem to be enough for a certain curve in Euclidean space to be analysed easily. However, all the textbooks taught me <strong>&ldquo;regularity&rdquo;</strong> were forgoten<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup><sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>. What exactly is &ldquo;regularity&rdquo; they mentioned here? I shall read the definition again.</p>
-$$\forall t \in (a,b), |\alpha'(t)| = \sqrt{[x'(t)]^2 +[y'(t)]^2 + [z'(t)]^2}> 0.$$<p>We want to insure that the curve we consider has a tangent line at every point. <em>Frenet frame</em>, a powerful tool for analysis, consists of three vectors orthogonal to each other: unit tangent vector $\bm{t}$, unit normal vector $\bm{n}$, unit binormal vector $\bm{b}$. Both $\bm{n}$ and $\bm{b}$ come from $\bm{t}$ parallel to the tangent line. What if the derivative of $\alpha(t_0)$ was a zero vector? Unfortunately, such tangent line might not exist at $t_0$, and dear Frenet frame couldn&rsquo;t work. Frent frame is only a small example to show why WE NEED TANGENT LINEs EVERYWHERE.</p>
+\[ \forall t \in (a,b), |\alpha'(t)| = \sqrt{[x'(t)]^2 +[y'(t)]^2 + [z'(t)]^2}> 0. \]<p>We want to insure that the curve we consider has a tangent line at every point. <em>Frenet frame</em>, a powerful tool for analysis, consists of three vectors orthogonal to each other: unit tangent vector $\bm{t}$, unit normal vector $\bm{n}$, unit binormal vector $\bm{b}$. Both $\bm{n}$ and $\bm{b}$ come from $\bm{t}$ parallel to the tangent line. What if the derivative of $\alpha(t_0)$ was a zero vector? Unfortunately, such tangent line might not exist at $t_0$, and dear Frenet frame couldn&rsquo;t work. Frent frame is only a small example to show why WE NEED TANGENT LINEs EVERYWHERE.</p>
 <p><strong>e.g.</strong> Consider such a plane curve, $\alpha: \alpha(t) = (t^4, t^2, t^3)$. Of course it&rsquo;s differentiable. Notice that $\alpha'(0) = (0,0,0)$, the velocity vector is zero for $t = 0$, so this curve is not regular. You can check its figure below. Pay attention to $(0,0,0)$, the curve isn&rsquo;t smooth there.</p>
 <p><img src="/posts/%E5%85%B3%E4%BA%8E%E5%BE%AE%E5%88%86%E5%87%A0%E4%BD%95%E4%B8%AD%E6%AD%A3%E5%88%99%E7%9A%84%E7%90%86%E8%A7%A3/%E4%B8%89%E7%BB%B4%E5%8F%82%E6%95%B0%E6%9B%B2%E7%BA%BF.svg" alt="Image"></p>
 <p>Someone (like me) prefer to play devil’s advocate: how can a non-zero derivative demonstrate the existence of the tangent line to the curve? The proof is as followed.</p>
@@ -138,12 +124,10 @@ $$<p>Obviously, iff. $\bm{e}^-(t_0) = \bm{e}^+(t_0) = \bm{e}$, the tangent line 
 <footer>
   <a href="#">Back to top</a>
   <span id="copyright">
-    &copy;
-    Zhihao Ye
-    
-      2019 - 
-    
-    2025
+    Built in theme SakuraChiyo
+    &copy;Zhihao Ye
+    2019-2025
+
   </span> 
 </footer>
 </body>

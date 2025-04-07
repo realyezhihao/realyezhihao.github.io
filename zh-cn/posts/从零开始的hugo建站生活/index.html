@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>从零开始的Hugo建站生活 | 断网博客</title>
+  
+      <link rel="stylesheet" href="/main.min.1abf4d0b20a5fe36bd650a1bfbaba94bd1ef31575320532dd382a59c225dcc59.css" integrity="sha256-Gr9NCyCl/ja9ZQob&#43;6upS9HvMVdTIFMt04KlnCJdzFk=" crossorigin="anonymous">
+      <link rel="stylesheet" href="/font.min.25a22a47a931e06821bdbb9907a45066f4cc6594c5f377e56881c8834ed4141d.css" integrity="sha256-JaIqR6kx4GghvbuZB6RQZvTMZZTF83flaIHIg07UFB0=" crossorigin="anonymous">
+
+  
+      <script src="/main.cf84904bf8cca4ebaa521fd9b5d7c2ab739ea5947977b3f238bfe55313ea9fe7.js" integrity="sha256-z4SQS/jMpOuqUh/ZtdfCq3OepZR5d7PyOL/lUxPqn&#43;c=" crossorigin="anonymous"></script>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/image/webicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/image/webicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/image/webicon/favicon-16x16.png">
+    <link rel="manifest" href="/image/webicon/site.webmanifest">
+
+  
+</head>
+<body>
+  <header>
+      <figure id="avatar">
+        <a href="/"><img src="/image/avatar.jpg" alt="avatar"/></a>
+      </figure>
+    <div id="headertext">
+      <h1 id="sitetitle">断网博客</h1>
+      
+  <nav id="topnav">
+    <ul>
+    <li>
+      <a href="/zh-cn/">首页</a>
+    </li>
+    <li>
+      <a href="/zh-cn/about/">关于</a>
+    </li>
+    <li>
+      <a href="/zh-cn/tags/">标签页</a>
+    </li>
+    <li>
+      <a href="/">English</a>
+    </li>
+    </ul>
+  </nav>
+
+    </div>
+  </header>
+<article>
+  
+<nav id="tags">
+  <ul>
+      <li><a href="/zh-cn/tags/#PC%20Bumbling">折腾电脑</a></li>
+  </ul>
+</nav>
+
+  <h1 id="articletitle">从零开始的Hugo建站生活</h1>
+  
+  <time datetime="2025-04-07">2025-04-07</time>
+
+  
+  <p>今天我将我的SakuraChiyo主题上传至Github了！为了庆贺其诞生，我写下本文，旨在帮助喜欢折腾的孩子借助Hugo来建立他们的网站（好比如帮助当年的自己一样）。</p>
+<h1 id="hugo简介">Hugo简介</h1>
+<p>Hugo是一个开源的静态网站生成工具（其他的还有像Jekyll、Hexo等等），用GO语言写成，号称渲染速度是世界最快（此前我只用过Hexo，确实比Hexo要快）。具体详情参看其<a href="https://gohugo.io/">官网</a>。简单来说，Hugo是按照你所提供的模板主题（theme）和编写好的页面内容（content）渲染出一系列的<code>.html</code> <code>.xml</code>等可被浏览器识别的网页文件。<strong>主题</strong>是网站的骨骼，<strong>内容</strong>是网站的血肉。</p>
+<p>下载Hugo有很多方法，具体可以参看<a href="https://gohugo.io/installation/">官方文档</a>。下面介绍我当时用的方法。</p>
+<p>我操作系统是Windows 11，所以在官方的<a href="https://github.com/gohugoio/hugo/releases">发布页</a>（国内打开github可能会卡）找到最新版的Hugo（截至写本文时是v0.145.0），然后再找到适于windows系统的版本。这时又蹦出了<code>extended</code> <code>amd64</code> <code>arm64</code>等不同选择。<code>amd64</code> <code>arm64</code>好理解，就是根据你电脑的CPU架构来选择，一般来说Intel、AMD之类的就选<code>amd64</code>，苹果之类的就选<code>arm64</code>。<code>extended</code>就是在标准版Hugo的基础上多了一些功能（参考官网介绍），而对我个人来说标准版已经够用了。</p>
+<p>下载得到一个几十MB的压缩包，解压会发现核心就一个<code>Hugo.exe</code>，属于是绿色软件了。后续会在命令行内运行Hugo，所以要把它的路径加入环境变量（environment variables），具体设置方法网上都有大量介绍。设置好后启动命令行，直接运行<code>hugo version</code>指令，检查是否安装成功。</p>
+<h1 id="github-pages简介">Github Pages简介</h1>
+<p>简单来说，Github Pages根据GitHub上的存储库（repository）中的内容来发布网站，其服务器就是Github的服务器，所以是免费的。官网在<a href="https://pages.github.com/">这里</a>，另外还有官方的中文版<a href="https://docs.github.com/zh/pages">使用说明</a>。详细展开太复杂我不想写了……毕竟涉及到Git、Github等（爱折腾的孩子不会被这一点困难就吓倒的），这里我推荐一本参考书：大塚弘记的《Github入门与实践》，很薄的小册子。</p>
+<p>总之，我们需要做的是在Github上创建一个启用了Github Pages功能的存储库。</p>
+<p>如果你有其他的平台和服务器来发布你的网站文件，那么你可以忽略上面的Github Pages。</p>
+<h1 id="开始编写网站">开始编写网站</h1>
+<p>首先需要一副骨骼框架，也就是Hugo的主题。推荐新手先从使用别人写好的主题开始（这只需你会一点Markdown），以后再来慢慢摸索如何写自己的主题（这要求你至少拥有关于HTML，css甚至JavaScript的知识）。Hugo的官方<a href="https://themes.gohugo.io/">主题社区</a>有许多颜值出色的主题供你挑选，你也可以试试我刚刚做好的<a href="https://github.com/realyezhihao/SakuraChiyo">SakuraChiyo主题</a>，这也是我的网站目前所使用的。</p>
+<h2 id="建立网站">建立网站</h2>
+<p>进入<code>cmd</code>或者<code>bash</code>，在你确定好的路径位置运行以下的Hugo指令</p>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">1</span><span>hugo new site MySite --format yaml
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">2</span><span><span style="color:#8b949e;font-style:italic"># 将“MySite”替换为您自定义的网站名称</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">3</span><span><span style="color:#8b949e;font-style:italic"># 推荐使用yaml格式，其可读性优于toml格式</span>
+</span></span></code></pre></div><p>Hugo会生成以下的文件结构：</p>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681"> 1</span><span>MySite/
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681"> 2</span><span>├── archetypes <span style="color:#8b949e;font-style:italic">#文章模板文件夹</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681"> 3</span><span>├── assets     <span style="color:#8b949e;font-style:italic">#网站资源文件夹</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681"> 4</span><span>├── content    <span style="color:#8b949e;font-style:italic">#网站页面内容文件夹</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681"> 5</span><span>├── data       <span style="color:#8b949e;font-style:italic">#网站数据文件夹</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681"> 6</span><span>├── i18n       <span style="color:#8b949e;font-style:italic">#多语言翻译字典文件夹</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681"> 7</span><span>├── layouts    <span style="color:#8b949e;font-style:italic">#页面模板文件夹</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681"> 8</span><span>├── static     <span style="color:#8b949e;font-style:italic">#静态资源文件夹</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681"> 9</span><span>├── themes     <span style="color:#8b949e;font-style:italic">#网站主题文件夹</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">10</span><span>└── hugo.yaml  <span style="color:#8b949e;font-style:italic">#网站设置文件</span>
+</span></span></code></pre></div><h2 id="导入主题">导入主题</h2>
+<p>将你的模板放进<code>MySite/themes</code>文件夹中，并在<code>MySite/hugo.yaml</code>文件中设置网站主题。可以看到你下载的主题文件夹内也具有类似上面的文件结构，其实Hugo在生成网站时，会以你网站根目录下的这些文件夹里的内容为最高优先级来生成网站的架构，如果某文件夹为空，再检索主题文件夹里的对应内容作为备用，所以你可以在网站根目录下的这些文件夹里添加部分你自己的排版方案来覆盖主题文件夹里的预设方案。新手可以先保持网站文件夹的设置全部为空，全盘接受主题文件夹的预设，等熟悉后再作自定义微调覆盖。</p>
+<p>以我的SakuraChiyo主题为例。下载解压后得到一个<code>hugo-SakuraChiyo</code>文件夹，将该文件夹放进<code>MySite/themes</code>文件夹中，并在<code>MySite/hugo.yaml</code>中设置<code>theme: hugo-SakuraChiyo</code>。</p>
+<h2 id="完善设置">完善设置</h2>
+<p>要让Hugo能按照你选定的主题正确地将Markdown页面内容渲染成<code>.html</code>文件，还需要对<code>hugo.yaml</code>进行正确设置。对不同的主题，<code>hugo.yaml</code>的设置方法也不相同，具体得参考你所选主题的帮助文档。关于SakuraChiyo主题的设置方法，请参看<a href="/hugo-SakuraChiyo/zh-cn/posts/how-to-install-theme-sakurachiyo/">这里</a>给出的样例。</p>
+<h2 id="编写页面">编写页面</h2>
+<p>Hugo默认所有的待渲染页面存放在<code>MySite/content</code>文件夹内部。在这个文件夹里新建一个名为<code>index.md</code>的Markdown文件，在里面设置好头部参数（front matter）后（具体设置也需参考所使用主题的帮助文档或示例），就可以愉快地随意写东西了。这个直接放在<code>content</code>文件夹下的<code>index.md</code>文件，一般会被Hugo当作网站首页的。如果是其他页面的<code>index.md</code>，一般要放在<code>content</code>的对应子文件夹里面，具体也需要参阅所使用主题的帮助文档或示例。</p>
+<h2 id="生成浏览器可识别的网站页面">生成浏览器可识别的网站页面</h2>
+<p>在网站根目录位置<code>MySite</code>运行指令</p>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">1</span><span>hugo server
+</span></span></code></pre></div><p>如果不出错的话，Hugo会在该网站的根目录下生成一个名为<code>public</code>的文件夹，同时会提示<code>Web Server is available at ***</code>，即可利用浏览器在<code>***</code>地址处对Hugo刚刚生成的网站进行本地预览。检查没有问题后，运行</p>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">1</span><span>hugo
+</span></span></code></pre></div><p>然后<code>public</code>文件夹里的内容就是我们所需要的可发布网页文件。</p>
+<h2 id="发布网站">发布网站</h2>
+<p>将这个<code>public</code>内的所有文件上传（或覆盖）到之前你创建好的Github存储库中。Github Pages，启动！</p>
+<p>恭喜，你的网站已然上线！</p>
+
+</article>
+
+<footer>
+  <a href="#">回到顶部</a>
+  <span id="copyright">
+    Built in theme SakuraChiyo
+    &copy;Zhihao Ye
+    2019-2025
+
+  </span> 
+</footer>
+</body>
+</html>

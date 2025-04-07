@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Page1 on Demo Site in Theme SakuraChiyo</title>
+    <link>/hugo-SakuraChiyo/page1/</link>
+    <description>Recent content in Page1 on Demo Site in Theme SakuraChiyo</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate></lastBuildDate>
+    <atom:link href="/hugo-SakuraChiyo/page1/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>
