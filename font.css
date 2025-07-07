@@ -1,0 +1,71 @@
+@font-face {
+    font-family: 'zhglobal';
+    src: local('STKAITI'),
+} /*Chinese global font*/
+@font-face {
+    font-family: 'englobal';
+    src: local('Garamond'),
+} /*English global font*/
+
+/*i18n*/
+html[lang="en-us"] body {
+    font-family: 'englobal', Times, serif;
+    line-height: 1.3;
+}
+html[lang="zh-cn"] body {
+    font-family: 'zhglobal', serif;
+    line-height: 1.5;
+}
+
+body {
+    font-size: 1.2em;
+    word-spacing: 3px;
+}
+blockquote p {
+    font-size: medium;
+}
+footer {
+    font-size: small;
+}
+h1 {
+    font-size: xx-large;
+    font-weight: 600;
+}
+h1#sitetitle {
+    font-size: xx-large;
+    font-weight: 600;
+}
+h1#articletitle {
+    font-size: xxx-large;
+    font-weight: 600;
+    margin-bottom: 0px;
+}
+h2 {
+    font-size: x-large;
+    font-weight: 600;
+}
+h3 {
+    font-size: large;
+    font-weight: 600;
+}
+h4 {
+    font-size: large;
+    font-weight: 400;
+}
+h5,h6 {
+    font-size: medium;
+    font-weight: 400;
+}
+
+/*code*/
+code {
+    font-family: Consolas, Courier, 'Lucida Console', monospace;
+}
+pre, code {
+    font-size: .95em;
+}
+
+/*date time*/
+h2.yearhead, time {
+    font-family: Georgia, Times, serif;
+}

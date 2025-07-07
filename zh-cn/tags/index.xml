@@ -6,8 +6,22 @@
     <description>Recent content in tags on 断网博客</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 07 Apr 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 07 Jul 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="/zh-cn/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Work</title>
+      <link>/zh-cn/tags/work/</link>
+      <pubDate>Mon, 07 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>/zh-cn/tags/work/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>misc</title>
+      <link>/zh-cn/tags/misc/</link>
+      <pubDate>Thu, 03 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>/zh-cn/tags/misc/</guid>
+      <description></description>
+    </item>
     <item>
       <title>PC Bumbling</title>
       <link>/zh-cn/tags/pc-bumbling/</link>
@@ -20,20 +34,6 @@
       <link>/zh-cn/tags/reading/</link>
       <pubDate>Tue, 01 Oct 2024 00:00:00 +0000</pubDate>
       <guid>/zh-cn/tags/reading/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Work</title>
-      <link>/zh-cn/tags/work/</link>
-      <pubDate>Tue, 16 Jul 2024 00:00:00 +0000</pubDate>
-      <guid>/zh-cn/tags/work/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>misc</title>
-      <link>/zh-cn/tags/misc/</link>
-      <pubDate>Sat, 01 Jun 2024 00:00:00 +0000</pubDate>
-      <guid>/zh-cn/tags/misc/</guid>
       <description></description>
     </item>
   </channel>
