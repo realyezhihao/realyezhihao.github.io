@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>一种安装LaTeX的可能路径 | 断网博客</title>
+  
+      <link rel="stylesheet" href="/main.min.1abf4d0b20a5fe36bd650a1bfbaba94bd1ef31575320532dd382a59c225dcc59.css" integrity="sha256-Gr9NCyCl/ja9ZQob&#43;6upS9HvMVdTIFMt04KlnCJdzFk=" crossorigin="anonymous">
+      <link rel="stylesheet" href="/font.min.25a22a47a931e06821bdbb9907a45066f4cc6594c5f377e56881c8834ed4141d.css" integrity="sha256-JaIqR6kx4GghvbuZB6RQZvTMZZTF83flaIHIg07UFB0=" crossorigin="anonymous">
+
+  
+      <script src="/main.cf84904bf8cca4ebaa521fd9b5d7c2ab739ea5947977b3f238bfe55313ea9fe7.js" integrity="sha256-z4SQS/jMpOuqUh/ZtdfCq3OepZR5d7PyOL/lUxPqn&#43;c=" crossorigin="anonymous"></script>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/image/webicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/image/webicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/image/webicon/favicon-16x16.png">
+    <link rel="manifest" href="/image/webicon/site.webmanifest">
+
+  
+    
+  <link rel="stylesheet" href="/katex/katex.min.css" integrity="" crossorigin="anonymous">
+  <script src="/katex/katex.min.js" integrity="" crossorigin="anonymous"></script>
+  <script src="/katex/auto-render.min.js" integrity="" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '\\[', right: '\\]', display: true},   
+        {left: '$$', right: '$$', display: true},   
+        {left: '\\(', right: '\\)', display: false},  
+        {left: '$', right: '$', display: false},      
+      ],
+      throwOnError : false
+    });
+  });
+</script>
+  
+</head>
+<body>
+  <header>
+      <figure id="avatar">
+        <a href="/"><img src="/image/avatar.jpg" alt="avatar"/></a>
+      </figure>
+    <div id="headertext">
+      <h1 id="sitetitle">断网博客</h1>
+      
+  <nav id="topnav">
+    <ul>
+    <li>
+      <a href="/zh-cn/">首页</a>
+    </li>
+    <li>
+      <a href="/zh-cn/about/">关于</a>
+    </li>
+    <li>
+      <a href="/zh-cn/tags/">标签页</a>
+    </li>
+    <li>
+      <a href="/">English</a>
+    </li>
+    </ul>
+  </nav>
+
+    </div>
+  </header>
+<article>
+  
+<nav id="tags">
+  <ul>
+      <li><a href="/zh-cn/tags/#PC%20Bumbling">折腾电脑</a></li>
+  </ul>
+</nav>
+
+  <h1 id="articletitle">一种安装LaTeX的可能路径</h1>
+  
+  <time datetime="2026-01-09">2026-01-09</time>
+
+  
+  <p>要入门LaTeX，我建议初学者使用这两本资料：《一份（不太）简短的 $\LaTeX\mathrm{2\varepsilon}$ 介绍》<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>和《 $\LaTeX$ 入门》<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>。那里讲的比我这里丰富完整得多。</p>
+<p>使用LaTeX有很多不同的配置方法，我在这里介绍我所使用的路径，即Windows 11系统下的TeX Live和VS Code的组合。这里可以把TeX Live理解为LaTeX软件系统的内核，我们选择用VS Code来编写LaTeX文档，然后调用这个内核来将我们的LaTeX代码翻译，最后输出PDF文件。</p>
+<h1 id="latex简介和tex-live下载">LaTeX简介和TeX Live下载</h1>
+<p>1978年，Knuth编制了 $\textbf{\TeX}$ 排版系统，这是一种电脑能够处理的低级语言，但大多数人发现它很难使用。为了让它变得更加易于上手，Lamport在其基础上设计了一套宏集，也就是 $\textbf{\LaTeX}$。所以说LaTeX是一种基于TeX的文档准备系统(Document Preparing System)。</p>
+<p>如今的LaTeX早已不靠单独的程序运行，使用该系统时会涉及到各种排版引擎、编译脚本、字体、数以千计的宏包和文档等等。我们要安装的是TeX发行版，也就是把所有这样的部件都集合起来打包发布的软件。常见的发行版有<a href="https://ctex.org/">CTeX</a>，以及我们这里将要选择安装的<a href="https://tug.org/texlive/">TeX Live</a>。</p>
+<p>官方下载网址在此：https://tug.org/texlive/acquire-netinstall.html ，我操作系统是Windows 11，所以下载适用于Windows的最新的安装程序即可。不过因为官方服务器在国外下载速度经常都偏慢，所以可以使用国内的镜像下载源，比如<a href="https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/Images/">清华镜像</a>等等。</p>
+<p>下载后得到一个好几个G大小的光盘映像文件，以管理员身份运行其中的<code>install-tl-windows.exe</code>安装程序，根据默认设置进行安装即可。安装时间会比较长。</p>
+<h1 id="vs-code简介和下载">VS Code简介和下载</h1>
+<p>Visual Studio Code是微软公司开发的跨平台源代码编辑器。本质上VS Code只是一个轻量的高度自由的文本编辑器，不过有很多开发者在这个平台上开发了各种各样的插件，从而可以实现多种语言的一站式开发。比如若是安装了Python的插件，就可以用VS Code编写甚至运行Pyhon程序。同样，首先访问<a href="https://code.visualstudio.com/">官网</a>进行免费下载，然后我们再在其中安装Latex的插件，就可以用VS Code来编辑LaTeX语言的文档了。</p>
+<p>下载地址在此：https://code.visualstudio.com/Download 。进入VS Code，点击最左侧的“Extentions”（拓展），搜索并安装适用于LaTeX的拓展：<a href="https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop">LaTeX Workshop</a>。</p>
+<p>将拓展安装好后我们还需要做一些设置，也就是将VS Code和之前我们安装好的TeX Live连接在一起。</p>
+<h1 id="设置vs-code和latex-workshop">设置VS Code和LaTeX Workshop</h1>
+<p>前面说到VS Code是具有高度自由化的源代码编辑器，这是因为你可以对其做出各种各样的个性化设置。按下<code>Ctrl</code>+<code>,</code>进入VS Code的管理设置的图形化界面，在右上角找到“Open Settings (JSON)”，点击进入VS Code的管理设置的基础文件。所有关于VS Code本身及其拓展的设置都在这里以JSON格式的键值对体现，方便统一管理。</p>
+<p>下面的对LaTeX Workshop的设置也不是唯一的，仅供参考。乐意折腾的同学可以移步该拓展的<a href="https://github.com/James-Yu/LaTeX-Workshop/wiki">官方Wiki</a>。</p>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JSON" data-lang="JSON"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681"> 1</span><span><span style="color:#8b949e;font-style:italic">//------------------------------LaTeX 配置------------------------------
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681"> 2</span><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#a5d6ff">&#34;latex-workshop.latex.autoBuild.run&#34;</span><span style="color:#f85149">:</span><span style="color:#a5d6ff">&#34;never&#34;</span><span style="color:#f85149">,</span><span style="color:#8b949e;font-style:italic">//自动编译：从不
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681"> 3</span><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#a5d6ff">&#34;latex-workshop.showContextMenu&#34;</span><span style="color:#f85149">:</span><span style="color:#79c0ff">true</span><span style="color:#f85149">,</span><span style="color:#8b949e;font-style:italic">//右键菜单：打开
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681"> 4</span><span><span style="color:#8b949e;font-style:italic"></span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681"> 5</span><span><span style="color:#8b949e;font-style:italic">// 编译出错时设置是否弹出气泡设置
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681"> 6</span><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#a5d6ff">&#34;latex-workshop.message.error.show&#34;</span><span style="color:#f85149">:</span> <span style="color:#79c0ff">true</span><span style="color:#f85149">,</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681"> 7</span><span><span style="color:#a5d6ff">&#34;latex-workshop.message.warning.show&#34;</span><span style="color:#f85149">:</span> <span style="color:#79c0ff">true</span><span style="color:#f85149">,</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681"> 8</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681"> 9</span><span><span style="color:#8b949e;font-style:italic">// 编译工具和命令
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">10</span><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#a5d6ff">&#34;latex-workshop.latex.tools&#34;</span><span style="color:#f85149">:</span> [
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">11</span><span>    {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">12</span><span>        <span style="color:#7ee787">&#34;name&#34;</span>: <span style="color:#a5d6ff">&#34;xelatex&#34;</span>,
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">13</span><span>        <span style="color:#7ee787">&#34;command&#34;</span>: <span style="color:#a5d6ff">&#34;xelatex&#34;</span>,
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">14</span><span>        <span style="color:#7ee787">&#34;args&#34;</span>: [
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">15</span><span>            <span style="color:#a5d6ff">&#34;-synctex=1&#34;</span>,
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">16</span><span>            <span style="color:#a5d6ff">&#34;-interaction=nonstopmode&#34;</span>,
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">17</span><span>            <span style="color:#a5d6ff">&#34;-file-line-error&#34;</span>,
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">18</span><span>            <span style="color:#a5d6ff">&#34;%DOCFILE%&#34;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">19</span><span>        ]
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">20</span><span>    },
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">21</span><span>    {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">22</span><span>        <span style="color:#7ee787">&#34;name&#34;</span>: <span style="color:#a5d6ff">&#34;pdflatex&#34;</span>,
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">23</span><span>        <span style="color:#7ee787">&#34;command&#34;</span>: <span style="color:#a5d6ff">&#34;pdflatex&#34;</span>,
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">24</span><span>        <span style="color:#7ee787">&#34;args&#34;</span>: [
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">25</span><span>            <span style="color:#a5d6ff">&#34;-synctex=1&#34;</span>,
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">26</span><span>            <span style="color:#a5d6ff">&#34;-interaction=nonstopmode&#34;</span>,
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">27</span><span>            <span style="color:#a5d6ff">&#34;-file-line-error&#34;</span>,
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">28</span><span>            <span style="color:#a5d6ff">&#34;%DOCFILE%&#34;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">29</span><span>        ]
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">30</span><span>    },
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">31</span><span>    {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">32</span><span>        <span style="color:#7ee787">&#34;name&#34;</span>: <span style="color:#a5d6ff">&#34;bibtex&#34;</span>,
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">33</span><span>        <span style="color:#7ee787">&#34;command&#34;</span>: <span style="color:#a5d6ff">&#34;bibtex&#34;</span>,
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">34</span><span>        <span style="color:#7ee787">&#34;args&#34;</span>: [
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">35</span><span>            <span style="color:#a5d6ff">&#34;%DOCFILE%&#34;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">36</span><span>        ]
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">37</span><span>    }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">38</span><span>]<span style="color:#f85149">,</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">39</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">40</span><span><span style="color:#8b949e;font-style:italic">// 配置编译链
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">41</span><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#a5d6ff">&#34;latex-workshop.latex.recipes&#34;</span><span style="color:#f85149">:</span> [
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">42</span><span>    {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">43</span><span>        <span style="color:#7ee787">&#34;name&#34;</span>: <span style="color:#a5d6ff">&#34;XeLaTeX&#34;</span>,
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">44</span><span>        <span style="color:#7ee787">&#34;tools&#34;</span>: [
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">45</span><span>            <span style="color:#a5d6ff">&#34;xelatex&#34;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">46</span><span>        ]
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">47</span><span>    },
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">48</span><span>    {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">49</span><span>        <span style="color:#7ee787">&#34;name&#34;</span>: <span style="color:#a5d6ff">&#34;PDFLaTeX&#34;</span>,
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">50</span><span>        <span style="color:#7ee787">&#34;tools&#34;</span>: [
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">51</span><span>            <span style="color:#a5d6ff">&#34;pdflatex&#34;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">52</span><span>        ]
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">53</span><span>    },
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">54</span><span>    {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">55</span><span>        <span style="color:#7ee787">&#34;name&#34;</span>: <span style="color:#a5d6ff">&#34;BibTeX&#34;</span>,
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">56</span><span>        <span style="color:#7ee787">&#34;tools&#34;</span>: [
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">57</span><span>            <span style="color:#a5d6ff">&#34;bibtex&#34;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">58</span><span>        ]
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">59</span><span>    },
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">60</span><span>    {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">61</span><span>        <span style="color:#7ee787">&#34;name&#34;</span>: <span style="color:#a5d6ff">&#34;xelatex -&gt; bibtex -&gt; xelatex*2&#34;</span>,
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">62</span><span>        <span style="color:#7ee787">&#34;tools&#34;</span>: [
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">63</span><span>            <span style="color:#a5d6ff">&#34;xelatex&#34;</span>,
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">64</span><span>            <span style="color:#a5d6ff">&#34;bibtex&#34;</span>,
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">65</span><span>            <span style="color:#a5d6ff">&#34;xelatex&#34;</span>,
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">66</span><span>            <span style="color:#a5d6ff">&#34;xelatex&#34;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">67</span><span>        ]
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">68</span><span>    },
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">69</span><span>    {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">70</span><span>        <span style="color:#7ee787">&#34;name&#34;</span>: <span style="color:#a5d6ff">&#34;pdflatex -&gt; bibtex -&gt; pdflatex*2&#34;</span>,
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">71</span><span>        <span style="color:#7ee787">&#34;tools&#34;</span>: [
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">72</span><span>            <span style="color:#a5d6ff">&#34;pdflatex&#34;</span>,
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">73</span><span>            <span style="color:#a5d6ff">&#34;bibtex&#34;</span>,
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">74</span><span>            <span style="color:#a5d6ff">&#34;pdflatex&#34;</span>,
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">75</span><span>            <span style="color:#a5d6ff">&#34;pdflatex&#34;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">76</span><span>        ]
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">77</span><span>    }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">78</span><span>]<span style="color:#f85149">,</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">79</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">80</span><span><span style="color:#a5d6ff">&#34;latex-workshop.latex.autoClean.run&#34;</span><span style="color:#f85149">:</span> <span style="color:#a5d6ff">&#34;onFailed&#34;</span><span style="color:#f85149">,</span> <span style="color:#8b949e;font-style:italic">//清除辅助文件：在构建失败后
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">81</span><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#a5d6ff">&#34;latex-workshop.latex.recipe.default&#34;</span><span style="color:#f85149">:</span> <span style="color:#a5d6ff">&#34;lastUsed&#34;</span><span style="color:#f85149">,</span> <span style="color:#8b949e;font-style:italic">//默认使用的recipe编译组合：上次用的
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">82</span><span><span style="color:#8b949e;font-style:italic">// &#34;latex-workshop.view.pdf.internal.synctex.keybinding&#34;: &#34;double-click&#34;, //用于反向同步的内部阅读器的键绑定（按照默认即可）
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681">83</span><span><span style="color:#8b949e;font-style:italic">// &#34;latex-workshop.latex.clean.fileTypes&#34;: [&#34;*.ist&#34;,], //文件清理（按照默认即可）
+</span></span></span></code></pre></div><p>正常来说，像这样设置好<code>settings.json</code>后，就可以愉快地在VS Code里编写<code>.tex</code>文档了，并且不用打开cmd命令行工具就可以直接在VS Code里调用“PDFLaTeX”“XeLaTeX”“BibTeX”等等工具来进行编译输出。</p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>Tobias Oetiker, et al. 一份不太简短的 $\LaTeX\mathrm{2\varepsilon}$介绍——或111分钟学会 $\LaTeX\mathrm{2\varepsilon}$ [CP/OL]. 中文版本6.05. (2024-12-18)[2025-01-09]. <a href="https://github.com/CTeX-org/lshort-zh-cn">https://github.com/CTeX-org/lshort-zh-cn</a><br>
+安装TeX Live后可在<code>.../texmf-dist/doc/latex/lshort-chinese</code>路径找到中文文档。&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p>刘海洋. $\LaTeX$入门[M]. 北京:电子工业出版社,2013.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+
+</article>
+
+<footer>
+  <a href="#">回到顶部</a>
+  <span id="copyright">
+    Built in theme SakuraChiyo
+    &copy;Zhihao Ye
+    2019-2026
+
+  </span> 
+</footer>
+</body>
+</html>
